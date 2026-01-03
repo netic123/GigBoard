@@ -71,6 +71,7 @@ export interface RegisterPersonalRequest {
   summary?: string;
   skills?: string[];
   yearsOfExperience?: number;
+  profilePictureUrl?: string;
 }
 
 export interface RegisterCompanyRequest {
@@ -94,6 +95,7 @@ export interface RegisterEmployerRequest {
   organizationNumber?: string;
   companyWebsite?: string;
   phone?: string;
+  profilePictureUrl?: string;
 }
 
 export interface Gig {

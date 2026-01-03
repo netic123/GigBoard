@@ -164,6 +164,7 @@ public class AuthController : ControllerBase
             Summary = request.Summary,
             Skills = request.Skills ?? new List<string>(),
             YearsOfExperience = request.YearsOfExperience,
+            ProfilePictureUrl = request.ProfilePictureUrl,
             AccountType = AccountType.Personal,
             Role = UserRole.Candidate
         };
@@ -223,18 +224,19 @@ public class AuthController : ControllerBase
             OrganizationNumber = request.OrganizationNumber,
             CompanyWebsite = request.CompanyWebsite,
             Phone = request.Phone,
+            ProfilePictureUrl = request.ProfilePictureUrl,
             AccountType = AccountType.Employer,
             Role = UserRole.Employer
         };
-        
+
         _db.Users.Add(user);
         await _db.SaveChangesAsync();
-        
+
         var token = _jwt.GenerateToken(user);
-        
+
         return Ok(new AuthResponse(token, MapToUserResponse(user)));
     }
-    
+
     // Traditional login
     [HttpPost("login")]
     public async Task<ActionResult<AuthResponse>> Login([FromBody] LoginRequest request)

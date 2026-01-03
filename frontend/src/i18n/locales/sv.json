@@ -89,6 +89,12 @@
     "active": "Aktivt",
     "inactive": "Inaktivt"
   },
+  "editGig": {
+    "title": "Redigera gig",
+    "save": "Spara ändringar",
+    "saving": "Sparar...",
+    "active": "Giget är aktivt och synligt för kandidater"
+  },
   "createGig": {
     "title": "Skapa nytt gig",
     "editTitle": "Redigera gig",
@@ -200,7 +206,12 @@
     },
     "linkedInConnected": "Kopplad till LinkedIn",
     "consultingCompany": "Vilket konsultbolag?",
-    "emailFromLinkedIn": "E-post från ditt LinkedIn-konto"
+    "emailFromLinkedIn": "E-post från ditt LinkedIn-konto",
+    "profilePicture": "Profilbild",
+    "uploadPhoto": "Ladda upp bild",
+    "changePhoto": "Byt bild",
+    "profilePictureHint": "JPG, PNG eller GIF. Max 5MB.",
+    "profilePictureTooLarge": "Bilden är för stor. Max 5MB."
   },
   "leaderboard": {
     "title": "Topplista",

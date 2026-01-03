@@ -16,20 +16,29 @@ import type {
 } from '../types';
 
 // Use environment variable for API URL in production, fallback to /api for local development
-const API_BASE = import.meta.env.VITE_API_URL 
-  ? `${import.meta.env.VITE_API_URL}/api` 
+const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
   : '/api';
 
 function getHeaders(): HeadersInit {
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
   };
-  
+
   const token = localStorage.getItem('token');
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
   }
-  
+
+  return headers;
+}
+
+function getAuthHeader(): HeadersInit {
+  const headers: HeadersInit = {};
+  const token = localStorage.getItem('token');
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
   return headers;
 }
 
@@ -239,6 +248,19 @@ export async function createReview(data: CreateReviewRequest): Promise<Review> {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify(data),
+  });
+  return handleResponse(response);
+}
+
+// Upload image
+export async function uploadImage(file: File): Promise<{ url: string }> {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  const response = await fetch(`${API_BASE}/upload/image`, {
+    method: 'POST',
+    headers: getAuthHeader(),
+    body: formData,
   });
   return handleResponse(response);
 }
