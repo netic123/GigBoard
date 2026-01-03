@@ -18,9 +18,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 // Services
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddHttpClient<ILinkedInService, LinkedInService>();
+builder.Services.AddScoped<ILinkedInService, LinkedInService>();
 
 // Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -49,33 +50,33 @@ builder.Services.AddCors(options =>
         var origins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>() 
             ?? new[] { "http://localhost:5173" };
         
-        // Filter out wildcard patterns for SetIsOriginAllowed
+        // Filter out wildcard patterns
         var wildcardOrigins = origins.Where(o => o.Contains("*")).ToList();
         var exactOrigins = origins.Where(o => !o.Contains("*")).ToArray();
         
-        if (exactOrigins.Length > 0)
+        // Use SetIsOriginAllowed for flexible origin matching (supports both exact and wildcard)
+        policy.SetIsOriginAllowed(origin =>
         {
-            policy.WithOrigins(exactOrigins);
-        }
-        
-        // Handle wildcard origins (e.g., *.azurestaticapps.net)
-        if (wildcardOrigins.Count > 0)
-        {
-            policy.SetIsOriginAllowed(origin =>
+            // Check exact origins first
+            if (exactOrigins.Contains(origin, StringComparer.OrdinalIgnoreCase))
             {
-                foreach (var pattern in wildcardOrigins)
+                return true;
+            }
+            
+            // Check wildcard patterns
+            foreach (var pattern in wildcardOrigins)
+            {
+                var regexPattern = "^" + System.Text.RegularExpressions.Regex.Escape(pattern)
+                    .Replace("\\*", ".*") + "$";
+                if (System.Text.RegularExpressions.Regex.IsMatch(origin, regexPattern, 
+                    System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
-                    var regexPattern = "^" + System.Text.RegularExpressions.Regex.Escape(pattern)
-                        .Replace("\\*", ".*") + "$";
-                    if (System.Text.RegularExpressions.Regex.IsMatch(origin, regexPattern, 
-                        System.Text.RegularExpressions.RegexOptions.IgnoreCase))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                return exactOrigins.Contains(origin);
-            });
-        }
+            }
+            
+            return false;
+        });
         
         policy.AllowAnyHeader()
             .AllowAnyMethod()
@@ -100,12 +101,14 @@ using (var scope = app.Services.CreateScope())
     if (app.Environment.IsDevelopment())
     {
         db.Database.EnsureCreated();
-        await SeedData.InitializeAsync(db);
     }
     else
     {
         db.Database.Migrate();
     }
+    
+    // Seed data in all environments (will only seed if database is empty)
+    await SeedData.InitializeAsync(db);
 }
 
 // Configure the HTTP request pipeline
