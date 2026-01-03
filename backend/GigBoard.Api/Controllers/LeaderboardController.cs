@@ -24,33 +24,46 @@ public class LeaderboardController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<LeaderboardResponseDto>> GetLeaderboard([FromQuery] int limit = 50)
     {
+        // Use subqueries to properly count reviews and compute averages
         var candidatesQuery = _context.Users
             .Where(u => u.Role == UserRole.Candidate)
             .Select(u => new
             {
                 User = u,
                 CompletedGigsCount = u.Applications.Count(a => a.Status == ApplicationStatus.Accepted),
-                Reviews = u.ReceivedReviews.ToList()
+                TotalReviews = _context.Reviews.Count(r => r.CandidateId == u.Id),
+                AverageRating = _context.Reviews.Where(r => r.CandidateId == u.Id).Any() 
+                    ? _context.Reviews.Where(r => r.CandidateId == u.Id).Average(r => (double)r.Rating) 
+                    : 0
             })
-            .Where(x => x.CompletedGigsCount > 0 || x.Reviews.Any());
+            .Where(x => x.CompletedGigsCount > 0 || x.TotalReviews > 0);
 
         var candidates = await candidatesQuery.ToListAsync();
 
+        // Now join with user data for the final DTO
+        var userIds = candidates.Select(c => c.User.Id).ToList();
+        var users = await _context.Users
+            .Where(u => userIds.Contains(u.Id))
+            .ToListAsync();
+
         var leaderboardEntries = candidates
-            .Select(x => new LeaderboardEntryDto(
-                UserId: x.User.Id,
-                FullName: x.User.FullName,
-                ProfilePictureUrl: x.User.ProfilePictureUrl,
-                Headline: x.User.Headline,
-                CompanyName: x.User.CompanyName,
-                CandidateType: x.User.CandidateType?.ToString() ?? "Unknown",
-                CompletedGigsCount: x.CompletedGigsCount,
-                AverageRating: x.Reviews.Any() ? Math.Round(x.Reviews.Average(r => r.Rating), 1) : 0,
-                TotalReviews: x.Reviews.Count,
-                TopSkills: x.User.Skills.Take(5).ToList(),
-                IsActivelyLooking: x.User.IsActivelyLooking,
-                Availability: x.User.Availability
-            ))
+            .Select(x => {
+                var user = users.First(u => u.Id == x.User.Id);
+                return new LeaderboardEntryDto(
+                    UserId: user.Id,
+                    FullName: user.FullName,
+                    ProfilePictureUrl: user.ProfilePictureUrl,
+                    Headline: user.Headline,
+                    CompanyName: user.CompanyName,
+                    CandidateType: user.CandidateType?.ToString() ?? "Unknown",
+                    CompletedGigsCount: x.CompletedGigsCount,
+                    AverageRating: Math.Round(x.AverageRating, 1),
+                    TotalReviews: x.TotalReviews,
+                    TopSkills: user.Skills.Take(5).ToList(),
+                    IsActivelyLooking: user.IsActivelyLooking,
+                    Availability: user.Availability
+                );
+            })
             // Sort by: 1) Most completed gigs, 2) Highest rating as tiebreaker
             .OrderByDescending(e => e.CompletedGigsCount)
             .ThenByDescending(e => e.AverageRating)
@@ -77,7 +90,10 @@ public class LeaderboardController : ControllerBase
             {
                 User = u,
                 CompletedGigsCount = u.Applications.Count(a => a.Status == ApplicationStatus.Accepted),
-                Reviews = u.ReceivedReviews.ToList()
+                TotalReviews = _context.Reviews.Count(r => r.CandidateId == u.Id),
+                AverageRating = _context.Reviews.Where(r => r.CandidateId == u.Id).Any() 
+                    ? _context.Reviews.Where(r => r.CandidateId == u.Id).Average(r => (double)r.Rating) 
+                    : 0
             })
             .FirstOrDefaultAsync();
 
@@ -92,8 +108,8 @@ public class LeaderboardController : ControllerBase
             CompanyName: candidate.User.CompanyName,
             CandidateType: candidate.User.CandidateType?.ToString() ?? "Unknown",
             CompletedGigsCount: candidate.CompletedGigsCount,
-            AverageRating: candidate.Reviews.Any() ? Math.Round(candidate.Reviews.Average(r => r.Rating), 1) : 0,
-            TotalReviews: candidate.Reviews.Count,
+            AverageRating: Math.Round(candidate.AverageRating, 1),
+            TotalReviews: candidate.TotalReviews,
             TopSkills: candidate.User.Skills.Take(5).ToList(),
             IsActivelyLooking: candidate.User.IsActivelyLooking,
             Availability: candidate.User.Availability
