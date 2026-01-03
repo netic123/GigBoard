@@ -69,6 +69,7 @@ build/
 
 # Secrets
 appsettings.Production.json
+appsettings.Local.json
 *.pfx
 *.p12
 

@@ -183,6 +183,7 @@
     "back": "Tillbaka",
     "passwordMismatch": "Lösenorden matchar inte",
     "passwordTooShort": "Lösenordet måste vara minst 6 tecken",
+    "chooseAccountType": "Vad beskriver dig bäst?",
     "accountTypes": {
       "personal": {
         "title": "Kandidat",
