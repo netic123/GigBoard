@@ -183,6 +183,7 @@
     "back": "Back",
     "passwordMismatch": "Passwords do not match",
     "passwordTooShort": "Password must be at least 6 characters",
+    "chooseAccountType": "What best describes you?",
     "accountTypes": {
       "personal": {
         "title": "Candidate",

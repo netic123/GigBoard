@@ -13,9 +13,9 @@ export default function RegisterPage() {
   const [searchParams] = useSearchParams();
   const { login: authLogin } = useAuth();
 
-  // Get initial type from URL or default to personal
-  const initialType = (searchParams.get('type') as AccountType) || 'personal';
-  const [accountType, setAccountType] = useState<AccountType>(initialType);
+  // Get initial type from URL, or null if not specified
+  const initialType = searchParams.get('type') as AccountType | null;
+  const [accountType, setAccountType] = useState<AccountType | null>(initialType);
 
   const [step, setStep] = useState(1);
 
@@ -152,11 +152,7 @@ export default function RegisterPage() {
                     setAccountType(type);
                     setStep(2);
                   }}
-                  className={`w-full text-left p-4 rounded-lg border transition-all ${
-                    accountType === type
-                      ? 'border-white bg-white/5'
-                      : 'border-neutral-800 hover:border-neutral-600'
-                  }`}
+                  className="w-full text-left p-4 rounded-lg border border-neutral-800 hover:border-neutral-400 transition-all"
                 >
                   <div className="font-medium">{t(`auth.accountTypes.${type}.title`)}</div>
                   <div className="text-sm text-neutral-400">{t(`auth.accountTypes.${type}.description`)}</div>

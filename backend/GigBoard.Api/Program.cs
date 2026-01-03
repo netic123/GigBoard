@@ -8,6 +8,9 @@ using GigBoard.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Load optional local settings (for connecting to Azure DB locally)
+builder.Configuration.AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
+
 // Database - SQL Server
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -94,21 +97,20 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Ensure database is created/migrated and seeded
+// Ensure database is created/migrated
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     if (app.Environment.IsDevelopment())
     {
         db.Database.EnsureCreated();
+        // Seed test data only in Development
+        await SeedData.InitializeAsync(db);
     }
     else
     {
         db.Database.Migrate();
     }
-    
-    // Seed data in all environments (will only seed if database is empty)
-    await SeedData.InitializeAsync(db);
 }
 
 // Configure the HTTP request pipeline
