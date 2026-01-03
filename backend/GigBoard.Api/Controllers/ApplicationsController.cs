@@ -152,7 +152,9 @@ public class ApplicationsController : ControllerBase
             a.Applicant.Location,
             a.Applicant.Skills,
             a.Applicant.YearsOfExperience,
-            a.Applicant.AccountType.ToString()
+            a.Applicant.AccountType.ToString(),
+            a.Applicant.IsActivelyLooking,
+            a.Applicant.Availability
         ),
         new GigSummaryResponse(
             a.Gig.Id,

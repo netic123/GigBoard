@@ -23,6 +23,42 @@ public record LinkedInUserInfo(
     bool email_verified
 );
 
+// LinkedIn auth response - can be existing user login or new user data
+public record LinkedInAuthResponse(
+    bool IsNewUser,
+    string? Token,
+    UserResponse? User,
+    LinkedInProfileData? LinkedInData
+);
+
+// LinkedIn profile data for pre-filling registration
+public record LinkedInProfileData(
+    string LinkedInId,
+    string Email,
+    string FullName,
+    string? FirstName,
+    string? LastName,
+    string? ProfilePictureUrl,
+    string? ProfileUrl
+);
+
+// Registration with LinkedIn data (no password needed)
+public record RegisterWithLinkedInRequest(
+    string LinkedInId,
+    string Email,
+    string FullName,
+    string? LinkedInProfileUrl,
+    string? ProfilePictureUrl,
+    string? Phone,
+    string? Location,
+    string? Headline,
+    string? Summary,
+    List<string>? Skills,
+    int? YearsOfExperience,
+    string? CompanyName,
+    string? CandidateType  // "Freelance" or "ConsultingFirm"
+);
+
 // Registration - Personal account
 public record RegisterPersonalRequest(
     string Email,

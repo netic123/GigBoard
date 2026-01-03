@@ -24,6 +24,7 @@ public class Gig
     
     // Navigation
     public ICollection<Application> Applications { get; set; } = new List<Application>();
+    public ICollection<Review> Reviews { get; set; } = new List<Review>();
 }
 
 public enum GigType

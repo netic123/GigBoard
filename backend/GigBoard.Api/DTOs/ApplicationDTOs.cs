@@ -25,7 +25,9 @@ public record ApplicantResponse(
     string? Location,
     List<string> Skills,
     int? YearsOfExperience,
-    string AccountType
+    string AccountType,
+    bool IsActivelyLooking,
+    string? Availability
 );
 
 public record GigSummaryResponse(

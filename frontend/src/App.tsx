@@ -10,6 +10,8 @@ import MyGigsPage from './pages/MyGigsPage';
 import CreateGigPage from './pages/CreateGigPage';
 import GigApplicationsPage from './pages/GigApplicationsPage';
 import MyApplicationsPage from './pages/MyApplicationsPage';
+import LeaderboardPage from './pages/LeaderboardPage';
+import CandidateProfilePage from './pages/CandidateProfilePage';
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
           {/* Public routes */}
           <Route path="/" element={<HomePage />} />
           <Route path="/gig/:id" element={<GigDetailPage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/candidate/:id" element={<CandidateProfilePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/auth/linkedin/callback" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />

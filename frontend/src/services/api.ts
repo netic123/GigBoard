@@ -6,7 +6,13 @@ import type {
   User,
   RegisterPersonalRequest,
   RegisterCompanyRequest,
-  RegisterEmployerRequest
+  RegisterEmployerRequest,
+  LinkedInAuthResponse,
+  RegisterWithLinkedInRequest,
+  CandidateReviewsSummary,
+  CreateReviewRequest,
+  Review,
+  CanReviewResponse
 } from '../types';
 
 const API_BASE = '/api';
@@ -32,12 +38,22 @@ async function handleResponse<T>(response: Response): Promise<T> {
   return response.json();
 }
 
-// Auth - LinkedIn
-export async function loginWithLinkedIn(code: string, redirectUri: string): Promise<AuthResponse> {
+// Auth - LinkedIn (returns either login or registration data)
+export async function loginWithLinkedIn(code: string, redirectUri: string): Promise<LinkedInAuthResponse> {
   const response = await fetch(`${API_BASE}/auth/linkedin`, {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify({ code, redirectUri }),
+  });
+  return handleResponse(response);
+}
+
+// Auth - Register with LinkedIn data
+export async function registerWithLinkedIn(data: RegisterWithLinkedInRequest): Promise<AuthResponse> {
+  const response = await fetch(`${API_BASE}/auth/register/linkedin`, {
+    method: 'POST',
+    headers: getHeaders(),
+    body: JSON.stringify(data),
   });
   return handleResponse(response);
 }
@@ -196,6 +212,30 @@ export async function updateApplicationStatus(id: number, status: Application['s
     method: 'PATCH',
     headers: getHeaders(),
     body: JSON.stringify(status),
+  });
+  return handleResponse(response);
+}
+
+// Reviews
+export async function getCandidateReviews(candidateId: number): Promise<CandidateReviewsSummary> {
+  const response = await fetch(`${API_BASE}/reviews/candidate/${candidateId}`, {
+    headers: getHeaders(),
+  });
+  return handleResponse(response);
+}
+
+export async function canReviewCandidate(candidateId: number, gigId: number): Promise<CanReviewResponse> {
+  const response = await fetch(`${API_BASE}/reviews/can-review/${candidateId}/${gigId}`, {
+    headers: getHeaders(),
+  });
+  return handleResponse(response);
+}
+
+export async function createReview(data: CreateReviewRequest): Promise<Review> {
+  const response = await fetch(`${API_BASE}/reviews`, {
+    method: 'POST',
+    headers: getHeaders(),
+    body: JSON.stringify(data),
   });
   return handleResponse(response);
 }

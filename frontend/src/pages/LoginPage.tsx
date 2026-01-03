@@ -33,8 +33,22 @@ export default function LoginPage() {
         setIsLoading(true);
         try {
           const response = await loginWithLinkedIn(code, LINKEDIN_REDIRECT_URI);
-          authLogin(response.token, response.user);
-          navigate(redirectTo);
+          
+          if (response.isNewUser && response.linkedInData) {
+            // New user - store LinkedIn data and redirect to registration
+            sessionStorage.setItem('linkedInData', JSON.stringify(response.linkedInData));
+            navigate('/register?linkedin=true');
+          } else if (response.token && response.user) {
+            // Existing user - log them in
+            authLogin(response.token, response.user);
+            
+            // Redirect based on role
+            if (response.user.role === 'Employer') {
+              navigate('/my-gigs');
+            } else {
+              navigate(redirectTo);
+            }
+          }
         } catch (err) {
           setError(err instanceof Error ? err.message : 'LinkedIn login failed');
           navigate('/login');

@@ -33,6 +33,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link to="/" className="text-neutral-400 hover:text-white transition-colors">
               {t('nav.gigs')}
             </Link>
+            <Link to="/leaderboard" className="text-neutral-400 hover:text-white transition-colors">
+              {t('nav.leaderboard')}
+            </Link>
             
             {user ? (
               <>
@@ -74,10 +77,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             )}
 
             {/* Language Switcher */}
-            <div className="relative">
+            <div className="relative inline-block">
               <button
                 onClick={() => setShowLangMenu(!showLangMenu)}
-                className="flex items-center gap-1.5 text-sm text-neutral-400 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-sm text-neutral-400 hover:text-white transition-colors whitespace-nowrap"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -89,10 +92,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </button>
               
               {showLangMenu && (
-                <div className="absolute right-0 mt-2 w-32 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg py-1 z-50">
+                <div className="absolute top-full right-0 mt-1 min-w-full bg-neutral-900 border border-neutral-700 rounded-lg shadow-xl py-1 z-50">
                   <button
                     onClick={() => changeLanguage('en')}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                    className={`w-full text-left px-4 py-2 text-sm whitespace-nowrap transition-colors ${
                       i18n.language === 'en' ? 'bg-neutral-700 text-white' : 'text-neutral-300 hover:bg-neutral-800'
                     }`}
                   >
@@ -100,7 +103,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </button>
                   <button
                     onClick={() => changeLanguage('sv')}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                    className={`w-full text-left px-4 py-2 text-sm whitespace-nowrap transition-colors ${
                       i18n.language === 'sv' ? 'bg-neutral-700 text-white' : 'text-neutral-300 hover:bg-neutral-800'
                     }`}
                   >

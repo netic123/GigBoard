@@ -10,6 +10,7 @@ public class AppDbContext : DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Gig> Gigs => Set<Gig>();
     public DbSet<Application> Applications => Set<Application>();
+    public DbSet<Review> Reviews => Set<Review>();
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -23,6 +24,13 @@ public class AppDbContext : DbContext
             
             // Store Skills as JSON
             entity.Property(u => u.Skills)
+                .HasConversion(
+                    v => System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
+                    v => System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null) ?? new List<string>()
+                );
+            
+            // Store PreferredGigTypes as JSON
+            entity.Property(u => u.PreferredGigTypes)
                 .HasConversion(
                     v => System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions?)null),
                     v => System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions?)null) ?? new List<string>()
@@ -60,6 +68,29 @@ public class AppDbContext : DbContext
                 
             // Prevent duplicate applications
             entity.HasIndex(a => new { a.GigId, a.ApplicantId }).IsUnique();
+        });
+        
+        // Review
+        modelBuilder.Entity<Review>(entity =>
+        {
+            entity.HasOne(r => r.Reviewer)
+                .WithMany(u => u.GivenReviews)
+                .HasForeignKey(r => r.ReviewerId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
+            entity.HasOne(r => r.Candidate)
+                .WithMany(u => u.ReceivedReviews)
+                .HasForeignKey(r => r.CandidateId)
+                .OnDelete(DeleteBehavior.Cascade);
+                
+            entity.HasOne(r => r.Gig)
+                .WithMany(g => g.Reviews)
+                .HasForeignKey(r => r.GigId)
+                .OnDelete(DeleteBehavior.SetNull);
+                
+            // Rating validation (1-5)
+            entity.Property(r => r.Rating)
+                .IsRequired();
         });
     }
 }

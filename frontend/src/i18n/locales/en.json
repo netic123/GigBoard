@@ -5,6 +5,7 @@
   },
   "nav": {
     "gigs": "Gigs",
+    "leaderboard": "Leaderboard",
     "myGigs": "My Gigs",
     "myApplications": "My Applications",
     "login": "Log in",
@@ -36,6 +37,7 @@
   },
   "gig": {
     "remote": "Remote",
+    "remoteAvailable": "remote available",
     "onsite": "On-site",
     "types": {
       "Contract": "Contract",
@@ -45,6 +47,7 @@
     },
     "perHour": "/h",
     "skills": "Skills",
+    "requiredSkills": "Required Skills",
     "about": "About the gig",
     "interested": "Interested?",
     "applyDescription": "Submit your application and the client will contact you.",
@@ -56,7 +59,16 @@
     "viewApplications": "View applications",
     "edit": "Edit",
     "delete": "Delete",
-    "confirmDelete": "Are you sure you want to delete this gig?"
+    "confirmDelete": "Are you sure you want to delete this gig?",
+    "contractDetails": "Contract Details",
+    "hourlyRate": "Hourly Rate",
+    "negotiable": "Negotiable",
+    "contractType": "Contract Type",
+    "duration": "Duration",
+    "ongoing": "Ongoing",
+    "startDate": "Start Date",
+    "location": "Location",
+    "applyBefore": "Apply Before"
   },
   "apply": {
     "title": "Apply for this gig",
@@ -107,17 +119,20 @@
     }
   },
   "applications": {
-    "title": "Applications for",
+    "title": "Applications",
+    "backToMyGigs": "My Gigs",
     "noApplications": "No applications yet",
+    "shareToGetMore": "Share your gig to get more applications",
     "noApplicationsDescription": "When candidates apply, they will appear here.",
     "status": {
-      "Pending": "Pending",
-      "Reviewed": "Reviewed",
-      "Accepted": "Accepted",
-      "Rejected": "Rejected"
+      "pending": "New",
+      "reviewed": "Reviewed",
+      "accepted": "Accepted",
+      "rejected": "Rejected"
     },
     "markAs": "Mark as",
     "viewProfile": "View profile",
+    "viewReviews": "View reviews",
     "contactVia": "Contact via"
   },
   "myApplications": {
@@ -164,13 +179,39 @@
     "passwordTooShort": "Password must be at least 6 characters",
     "accountTypes": {
       "personal": {
-        "title": "Freelancer",
-        "description": "I'm looking for freelance work"
+        "title": "Candidate",
+        "description": "I'm looking for gigs"
       },
       "employer": {
         "title": "Employer",
-        "description": "I'm looking for a freelancer"
+        "description": "I'm looking for candidates"
       }
+    },
+    "candidateType": "How do you work?",
+    "candidateTypes": {
+      "freelance": {
+        "title": "Freelancer",
+        "description": "Self-employed"
+      },
+      "consultingFirm": {
+        "title": "Consulting Firm",
+        "description": "Via CGI, Capgemini etc."
+      }
+    },
+    "linkedInConnected": "Connected to LinkedIn",
+    "consultingCompany": "Which consulting company?",
+    "emailFromLinkedIn": "Email from your LinkedIn account"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "The most successful candidates on GigBoard",
+    "completedGigs": "gigs",
+    "reviews": "reviews",
+    "noCandidates": "No candidates yet",
+    "sortBy": {
+      "combined": "Combined",
+      "gigs": "Most gigs",
+      "rating": "Highest rated"
     }
   },
   "footer": {
@@ -186,7 +227,39 @@
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
-    "or": "or"
+    "or": "or",
+    "optional": "optional",
+    "submitting": "Submitting..."
+  },
+  "reviews": {
+    "title": "Reviews",
+    "reviews": "reviews",
+    "completedGigs": "completed gigs",
+    "noReviews": "No reviews yet",
+    "noReviewsDescription": "This candidate hasn't received any reviews yet.",
+    "candidateNotFound": "Candidate not found",
+    "forGig": "For gig",
+    "leaveReview": "Leave review",
+    "alreadyReviewed": "Review submitted",
+    "writeReview": "Write a review",
+    "rating": "Rating",
+    "comment": "Comment",
+    "commentPlaceholder": "Describe your experience working with this person...",
+    "submit": "Submit review",
+    "infoText": "Your review helps other employers find the right candidate. Only employers who have hired the candidate can write reviews."
+  },
+  "profile": {
+    "freelancer": "Freelancer",
+    "consultant": "Consultant",
+    "activelyLooking": "Actively looking",
+    "available": "Available",
+    "notAvailable": "Not available",
+    "yearsExperience": "years experience",
+    "lookingFor": "Looking for",
+    "preferredTypes": "Preferred gig types",
+    "availability": "Availability",
+    "skills": "Skills",
+    "about": "About me"
   }
 }
 

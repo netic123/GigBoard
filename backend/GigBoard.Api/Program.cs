@@ -20,7 +20,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }
     else
     {
-        options.UseSqlite(connectionString ?? "Data Source=GigBoard.db");
+        // Use absolute path to ensure database persists across rebuilds
+        var dbPath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "GigBoard.db");
+        dbPath = Path.GetFullPath(dbPath); // Normalize the path
+        options.UseSqlite($"Data Source={dbPath}");
     }
 });
 
@@ -71,13 +74,14 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Ensure database is created/migrated
+// Ensure database is created/migrated and seeded
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     if (app.Environment.IsDevelopment())
     {
         db.Database.EnsureCreated();
+        await SeedData.InitializeAsync(db);
     }
     else
     {

@@ -4,8 +4,9 @@
     "tagline": "Hitta ditt nästa uppdrag"
   },
   "nav": {
-    "gigs": "Uppdrag",
-    "myGigs": "Mina uppdrag",
+    "gigs": "Gigs",
+    "leaderboard": "Topplista",
+    "myGigs": "Mina gigs",
     "myApplications": "Mina ansökningar",
     "login": "Logga in",
     "logout": "Logga ut"
@@ -15,12 +16,12 @@
     "sv": "Svenska"
   },
   "home": {
-    "title": "Hitta ditt nästa uppdrag",
-    "subtitle": "Sök bland hundratals konsultuppdrag och frilansuppdrag. Logga in med LinkedIn för att söka direkt.",
+    "title": "Hitta ditt nästa gig",
+    "subtitle": "Sök bland hundratals konsult- och frilansuppdrag. Logga in med LinkedIn för att söka direkt.",
     "searchPlaceholder": "Sök på titel, företag eller kompetens...",
     "search": "Sök",
-    "gigsCount": "{{count}} uppdrag",
-    "noGigsFound": "Inga uppdrag hittades",
+    "gigsCount": "{{count}} gigs",
+    "noGigsFound": "Inga gigs hittades",
     "noGigsHint": "Prova att ändra din sökning eller filter",
     "filters": {
       "all": "Alla",
@@ -36,6 +37,7 @@
   },
   "gig": {
     "remote": "Distans",
+    "remoteAvailable": "distans möjligt",
     "onsite": "På plats",
     "types": {
       "Contract": "Kontrakt",
@@ -45,18 +47,28 @@
     },
     "perHour": "/h",
     "skills": "Kompetenser",
-    "about": "Om uppdraget",
+    "requiredSkills": "Kompetenser som krävs",
+    "about": "Om gigget",
     "interested": "Intresserad?",
     "applyDescription": "Skicka in din ansökan så kontaktar uppdragsgivaren dig.",
     "applyNow": "Ansök nu",
     "applied": "Ansökt",
-    "allGigs": "Alla uppdrag",
+    "allGigs": "Alla gigs",
     "postedBy": "Publicerat av",
     "applications": "ansökningar",
     "viewApplications": "Visa ansökningar",
     "edit": "Redigera",
     "delete": "Ta bort",
-    "confirmDelete": "Är du säker på att du vill ta bort detta uppdrag?"
+    "confirmDelete": "Är du säker på att du vill ta bort detta gig?",
+    "contractDetails": "Avtalsdetaljer",
+    "hourlyRate": "Timpris",
+    "negotiable": "Förhandlingsbart",
+    "contractType": "Avtalstyp",
+    "duration": "Längd",
+    "ongoing": "Löpande",
+    "startDate": "Startdatum",
+    "location": "Plats",
+    "applyBefore": "Ansök senast"
   },
   "apply": {
     "title": "Ansök till detta uppdrag",
@@ -70,16 +82,16 @@
     "successDescription": "Uppdragsgivaren kommer att meddelas och kan kontakta dig."
   },
   "myGigs": {
-    "title": "Mina uppdrag",
-    "createNew": "Skapa uppdrag",
-    "noGigs": "Inga uppdrag ännu",
-    "noGigsDescription": "Skapa ditt första uppdrag för att börja hitta kandidater.",
+    "title": "Mina gigs",
+    "createNew": "Skapa gig",
+    "noGigs": "Inga gigs ännu",
+    "noGigsDescription": "Skapa ditt första gig för att börja hitta kandidater.",
     "active": "Aktivt",
     "inactive": "Inaktivt"
   },
   "createGig": {
-    "title": "Skapa nytt uppdrag",
-    "editTitle": "Redigera uppdrag",
+    "title": "Skapa nytt gig",
+    "editTitle": "Redigera gig",
     "form": {
       "title": "Titel",
       "titlePlaceholder": "t.ex. Senior .NET-utvecklare",
@@ -100,24 +112,27 @@
       "skillsPlaceholder": "t.ex. .NET, C#, Azure (kommaseparerat)",
       "competenceArea": "Kompetensområde",
       "selectCompetenceArea": "Välj område",
-      "submit": "Skapa uppdrag",
-      "update": "Uppdatera uppdrag",
+      "submit": "Skapa gig",
+      "update": "Uppdatera gig",
       "creating": "Skapar...",
       "updating": "Uppdaterar..."
     }
   },
   "applications": {
-    "title": "Ansökningar för",
+    "title": "Ansökningar",
+    "backToMyGigs": "Mina gigs",
     "noApplications": "Inga ansökningar ännu",
+    "shareToGetMore": "Dela ditt gig för att få fler ansökningar",
     "noApplicationsDescription": "När kandidater ansöker kommer de att visas här.",
     "status": {
-      "Pending": "Väntande",
-      "Reviewed": "Granskad",
-      "Accepted": "Accepterad",
-      "Rejected": "Avvisad"
+      "pending": "Ny",
+      "reviewed": "Granskad",
+      "accepted": "Godkänd",
+      "rejected": "Avvisad"
     },
     "markAs": "Markera som",
     "viewProfile": "Visa profil",
+    "viewReviews": "Se omdömen",
     "contactVia": "Kontakta via"
   },
   "myApplications": {
@@ -164,13 +179,39 @@
     "passwordTooShort": "Lösenordet måste vara minst 6 tecken",
     "accountTypes": {
       "personal": {
-        "title": "Frilansare",
-        "description": "Jag söker frilansuppdrag"
+        "title": "Kandidat",
+        "description": "Jag söker gigs"
       },
       "employer": {
         "title": "Uppdragsgivare",
-        "description": "Jag söker en frilansare"
+        "description": "Jag söker kandidater för gigs"
       }
+    },
+    "candidateType": "Hur söker du gigs?",
+    "candidateTypes": {
+      "freelance": {
+        "title": "Frilansare",
+        "description": "Egenföretagare"
+      },
+      "consultingFirm": {
+        "title": "Konsultbolag",
+        "description": "Via CGI, Capgemini etc."
+      }
+    },
+    "linkedInConnected": "Kopplad till LinkedIn",
+    "consultingCompany": "Vilket konsultbolag?",
+    "emailFromLinkedIn": "E-post från ditt LinkedIn-konto"
+  },
+  "leaderboard": {
+    "title": "Topplista",
+    "subtitle": "De mest framgångsrika kandidaterna på GigBoard",
+    "completedGigs": "uppdrag",
+    "reviews": "omdömen",
+    "noCandidates": "Inga kandidater ännu",
+    "sortBy": {
+      "combined": "Kombinerat",
+      "gigs": "Flest uppdrag",
+      "rating": "Högst betyg"
     }
   },
   "footer": {
@@ -186,7 +227,39 @@
     "cancel": "Avbryt",
     "delete": "Ta bort",
     "edit": "Redigera",
-    "or": "eller"
+    "or": "eller",
+    "optional": "valfritt",
+    "submitting": "Skickar..."
+  },
+  "reviews": {
+    "title": "Omdömen",
+    "reviews": "omdömen",
+    "completedGigs": "avklarade gigs",
+    "noReviews": "Inga omdömen ännu",
+    "noReviewsDescription": "Denna kandidat har inte fått några omdömen ännu.",
+    "candidateNotFound": "Kandidaten hittades inte",
+    "forGig": "För gigget",
+    "leaveReview": "Skriv omdöme",
+    "alreadyReviewed": "Omdöme lämnat",
+    "writeReview": "Skriv ett omdöme",
+    "rating": "Betyg",
+    "comment": "Kommentar",
+    "commentPlaceholder": "Beskriv din erfarenhet av att arbeta med denna person...",
+    "submit": "Skicka omdöme",
+    "infoText": "Ditt omdöme hjälper andra uppdragsgivare att hitta rätt kandidat. Endast uppdragsgivare som har anlitat kandidaten kan skriva omdömen."
+  },
+  "profile": {
+    "freelancer": "Frilansare",
+    "consultant": "Konsult",
+    "activelyLooking": "Söker aktivt",
+    "available": "Tillgänglig",
+    "notAvailable": "Ej tillgänglig",
+    "yearsExperience": "års erfarenhet",
+    "lookingFor": "Söker",
+    "preferredTypes": "Föredragna uppdragstyper",
+    "availability": "Tillgänglighet",
+    "skills": "Kompetenser",
+    "about": "Om mig"
   }
 }
 

@@ -23,9 +23,9 @@ public class AuthController : ControllerBase
         _linkedIn = linkedIn;
     }
     
-    // LinkedIn OAuth callback (for candidates)
+    // LinkedIn OAuth callback - login existing user or return data for registration
     [HttpPost("linkedin")]
-    public async Task<ActionResult<AuthResponse>> LinkedInAuth([FromBody] LinkedInAuthRequest request)
+    public async Task<ActionResult<LinkedInAuthResponse>> LinkedInAuth([FromBody] LinkedInAuthRequest request)
     {
         // Exchange code for token
         var tokenResponse = await _linkedIn.ExchangeCodeForToken(request.Code, request.RedirectUri);
@@ -37,39 +37,97 @@ public class AuthController : ControllerBase
         if (userInfo == null)
             return BadRequest(new { error = "Failed to get user info from LinkedIn" });
         
-        // Find or create user
+        // Check if user exists by LinkedIn ID
         var user = await _db.Users.FirstOrDefaultAsync(u => u.LinkedInId == userInfo.sub);
         
-        if (user == null)
+        if (user != null)
         {
-            // Check if email exists (link accounts)
-            user = await _db.Users.FirstOrDefaultAsync(u => u.Email == userInfo.email);
+            // Existing LinkedIn user - update profile picture and login
+            user.ProfilePictureUrl = userInfo.picture ?? user.ProfilePictureUrl;
+            user.LastLoginAt = DateTime.UtcNow;
+            await _db.SaveChangesAsync();
             
-            if (user != null)
-            {
-                // Link LinkedIn to existing account
-                user.LinkedInId = userInfo.sub;
-                user.LinkedInProfileUrl = $"https://www.linkedin.com/in/{userInfo.sub}";
-                user.ProfilePictureUrl = userInfo.picture;
-            }
-            else
-            {
-                // Create new user
-                user = new User
-                {
-                    Email = userInfo.email,
-                    FullName = userInfo.name,
-                    LinkedInId = userInfo.sub,
-                    LinkedInProfileUrl = $"https://www.linkedin.com/in/{userInfo.sub}",
-                    ProfilePictureUrl = userInfo.picture,
-                    AccountType = AccountType.Personal,
-                    Role = UserRole.Candidate
-                };
-                _db.Users.Add(user);
-            }
+            var token = _jwt.GenerateToken(user);
+            return Ok(new LinkedInAuthResponse(
+                IsNewUser: false,
+                Token: token,
+                User: MapToUserResponse(user),
+                LinkedInData: null
+            ));
         }
         
-        user.LastLoginAt = DateTime.UtcNow;
+        // Check if email exists (user registered with email but not LinkedIn)
+        user = await _db.Users.FirstOrDefaultAsync(u => u.Email == userInfo.email);
+        
+        if (user != null)
+        {
+            // Link LinkedIn to existing account
+            user.LinkedInId = userInfo.sub;
+            user.LinkedInProfileUrl = $"https://www.linkedin.com/in/{userInfo.sub}";
+            user.ProfilePictureUrl = userInfo.picture ?? user.ProfilePictureUrl;
+            user.LastLoginAt = DateTime.UtcNow;
+            await _db.SaveChangesAsync();
+            
+            var token = _jwt.GenerateToken(user);
+            return Ok(new LinkedInAuthResponse(
+                IsNewUser: false,
+                Token: token,
+                User: MapToUserResponse(user),
+                LinkedInData: null
+            ));
+        }
+        
+        // New user - return LinkedIn data for registration form
+        return Ok(new LinkedInAuthResponse(
+            IsNewUser: true,
+            Token: null,
+            User: null,
+            LinkedInData: new LinkedInProfileData(
+                LinkedInId: userInfo.sub,
+                Email: userInfo.email,
+                FullName: userInfo.name,
+                FirstName: userInfo.given_name,
+                LastName: userInfo.family_name,
+                ProfilePictureUrl: userInfo.picture,
+                ProfileUrl: $"https://www.linkedin.com/in/{userInfo.sub}"
+            )
+        ));
+    }
+    
+    // Complete registration with LinkedIn data
+    [HttpPost("register/linkedin")]
+    public async Task<ActionResult<AuthResponse>> RegisterWithLinkedIn([FromBody] RegisterWithLinkedInRequest request)
+    {
+        // Check if email already exists
+        if (await _db.Users.AnyAsync(u => u.Email == request.Email))
+            return BadRequest(new { error = "E-postadressen är redan registrerad" });
+        
+        // Check if LinkedIn ID already exists
+        if (await _db.Users.AnyAsync(u => u.LinkedInId == request.LinkedInId))
+            return BadRequest(new { error = "Detta LinkedIn-konto är redan kopplat till ett konto" });
+        
+        var user = new User
+        {
+            Email = request.Email,
+            FullName = request.FullName,
+            LinkedInId = request.LinkedInId,
+            LinkedInProfileUrl = request.LinkedInProfileUrl,
+            ProfilePictureUrl = request.ProfilePictureUrl,
+            Phone = request.Phone,
+            Location = request.Location,
+            Headline = request.Headline,
+            Summary = request.Summary,
+            Skills = request.Skills ?? new List<string>(),
+            YearsOfExperience = request.YearsOfExperience,
+            CompanyName = request.CompanyName,
+            CandidateType = request.CandidateType != null 
+                ? Enum.Parse<CandidateType>(request.CandidateType) 
+                : Models.CandidateType.Freelance,
+            AccountType = AccountType.Personal,
+            Role = UserRole.Candidate
+        };
+        
+        _db.Users.Add(user);
         await _db.SaveChangesAsync();
         
         var token = _jwt.GenerateToken(user);

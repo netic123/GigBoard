@@ -48,7 +48,11 @@ public class GigsController : ControllerBase
             query = query.Where(g => g.Location.ToLower().Contains(location.ToLower()));
             
         if (!string.IsNullOrEmpty(competenceArea))
-            query = query.Where(g => g.CompetenceArea == competenceArea);
+        {
+            // Map category filters to multiple possible competence areas
+            var matchingAreas = GetMatchingCompetenceAreas(competenceArea);
+            query = query.Where(g => matchingAreas.Contains(g.CompetenceArea ?? ""));
+        }
             
         if (type.HasValue)
             query = query.Where(g => g.Type == type.Value);
@@ -210,5 +214,50 @@ public class GigsController : ControllerBase
         gig.Applications?.Count ?? 0,
         new GigPosterResponse(gig.PostedBy.Id, gig.PostedBy.FullName, gig.PostedBy.ProfilePictureUrl)
     );
+    
+    // Maps UI category filters to matching competence areas
+    private static List<string> GetMatchingCompetenceAreas(string category) => category switch
+    {
+        "IT & Tech" => new List<string> 
+        { 
+            "IT & Tech", "Backend Development", "Frontend Development", "Full Stack", 
+            "DevOps", "Mobile Development", "Data Engineering", "Architecture", 
+            "Tech Lead", "Software Development", "Cloud", "Infrastructure"
+        },
+        "Management & Strategi" => new List<string> 
+        { 
+            "Management & Strategi", "Management", "Strategy", "Project Management",
+            "Product Management", "Business Analysis", "Consulting"
+        },
+        "Ekonomi & Finans" => new List<string> 
+        { 
+            "Ekonomi & Finans", "Finance", "Accounting", "Financial Analysis",
+            "Risk Management", "Controlling", "Treasury"
+        },
+        "Marknadsföring" => new List<string> 
+        { 
+            "Marknadsföring", "Marketing", "Design", "UX", "UI", "Digital Marketing",
+            "Content", "Brand", "Communications", "SEO", "Social Media"
+        },
+        "HR & Rekrytering" => new List<string> 
+        { 
+            "HR & Rekrytering", "HR", "Recruitment", "Talent Acquisition",
+            "People Operations", "Learning & Development"
+        },
+        "Juridik" => new List<string> 
+        { 
+            "Juridik", "Legal", "Compliance", "Contract Management"
+        },
+        "Bygg & Teknik" => new List<string> 
+        { 
+            "Bygg & Teknik", "Construction", "Engineering", "Civil Engineering",
+            "Mechanical Engineering", "Electrical Engineering"
+        },
+        "Vård & Omsorg" => new List<string> 
+        { 
+            "Vård & Omsorg", "Healthcare", "Medical", "Healthtech", "Life Science"
+        },
+        _ => new List<string> { category }
+    };
 }
 
