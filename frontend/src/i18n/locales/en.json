@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Find your next gig",
-    "subtitle": "Browse hundreds of consulting and freelance gigs. Log in with LinkedIn to apply directly.",
+    "subtitle": "Browse hundreds of consulting and freelance gigs. Log in to apply directly.",
     "searchPlaceholder": "Search by title, company or skill...",
     "search": "Search",
     "gigsCount": "{{count}} gigs",

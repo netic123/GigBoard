@@ -1,0 +1,526 @@
+2026-01-03T13:22:59.8816337Z Container start method called.
+2026-01-03T13:22:59.9046735Z Establishing network.
+2026-01-03T13:22:59.9048973Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:23:37.8917702Z Image appsvc/dotnetcore:8.0_20251016.4.tuxprod is pulled from registry 10.1.0.4:13209
+2026-01-03T13:23:37.8950893Z Container is starting.
+2026-01-03T13:23:37.8987324Z Establishing user namespace if not established already.
+2026-01-03T13:23:37.8990336Z Establishing network if not established already.
+2026-01-03T13:23:37.8992188Z Mounting volumes.
+2026-01-03T13:23:37.9003147Z Nested mountpoint 
+2026-01-03T13:23:37.9451090Z Nested mountpoint volatile/logs
+2026-01-03T13:23:37.9477133Z Nested mountpoint 
+2026-01-03T13:23:37.9895007Z Nested mountpoint 
+2026-01-03T13:23:37.9903390Z Nested mountpoint 
+2026-01-03T13:23:39.4242800Z Creating container.
+2026-01-03T13:23:39.4244787Z Creating pipes for streaming container io.
+2026-01-03T13:23:39.4246650Z Creating stdout named pipe at /podr/container/pipe/4c1682742a9b_gigboard-api/stdout_9c8c9b63c6a34668b192c354f9509f01.
+2026-01-03T13:23:39.5937013Z Successfully created stdout named pipe at: /podr/container/pipe/4c1682742a9b_gigboard-api/stdout_9c8c9b63c6a34668b192c354f9509f01.
+2026-01-03T13:23:39.5939329Z Opening named pipe /podr/container/pipe/4c1682742a9b_gigboard-api/stdout_9c8c9b63c6a34668b192c354f9509f01 for reading in non-blocking mode.
+2026-01-03T13:23:39.5941126Z Successfully opened named pipe: /podr/container/pipe/4c1682742a9b_gigboard-api/stdout_9c8c9b63c6a34668b192c354f9509f01.
+2026-01-03T13:23:39.5942460Z Successfully removed non-blocking flag from /podr/container/pipe/4c1682742a9b_gigboard-api/stdout_9c8c9b63c6a34668b192c354f9509f01.
+2026-01-03T13:23:39.5943962Z Creating stderr named pipe at /podr/container/pipe/4c1682742a9b_gigboard-api/stderr_7a211a3f31034e709db42ccedd8ea275.
+2026-01-03T13:23:39.5945885Z Successfully created stderr named pipe at: /podr/container/pipe/4c1682742a9b_gigboard-api/stderr_7a211a3f31034e709db42ccedd8ea275.
+2026-01-03T13:23:39.5947270Z Opening named pipe /podr/container/pipe/4c1682742a9b_gigboard-api/stderr_7a211a3f31034e709db42ccedd8ea275 for reading in non-blocking mode.
+2026-01-03T13:23:39.5948979Z Successfully opened named pipe: /podr/container/pipe/4c1682742a9b_gigboard-api/stderr_7a211a3f31034e709db42ccedd8ea275.
+2026-01-03T13:23:39.5950246Z Successfully removed non-blocking flag from /podr/container/pipe/4c1682742a9b_gigboard-api/stderr_7a211a3f31034e709db42ccedd8ea275.
+2026-01-03T13:23:39.5957104Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:23:41.8002036Z Starting container: 4c1682742a9b_gigboard-api.
+2026-01-03T13:23:41.8524780Z Starting watchers and probes.
+2026-01-03T13:23:41.8540904Z Starting metrics collection.
+2026-01-03T13:23:41.8595138Z Container is running.
+2026-01-03T13:23:42.6010969Z Container start method finished after 42718 ms.
+2026-01-03T13:24:21.9314619Z Container has finished running with exit code: 134.
+2026-01-03T13:24:21.9378292Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:24:21.9472705Z Stop and delete container. Retry count = 0
+2026-01-03T13:24:21.9483571Z Stopping container: 4c1682742a9b_gigboard-api.
+2026-01-03T13:24:22.0687789Z Deleting container: 4c1682742a9b_gigboard-api. Retry count = 0
+2026-01-03T13:24:22.2107851Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:24:22.2154275Z Container is terminated. Total time elapsed: 275 ms.
+2026-01-03T13:24:22.2162500Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:24:22.2443771Z Site startup probe failed after 39.5157813 seconds.
+2026-01-03T13:24:22.3364109Z Failed to start site. Revert by stopping site.
+2026-01-03T13:24:22.3492441Z Site: gigboard-api stopped.
+2026-01-03T13:24:29.2351578Z Container start method called.
+2026-01-03T13:24:29.2353953Z Establishing network.
+2026-01-03T13:24:29.2356488Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:24:29.7065123Z Container is starting.
+2026-01-03T13:24:29.7100899Z Establishing user namespace if not established already.
+2026-01-03T13:24:29.7118093Z Establishing network if not established already.
+2026-01-03T13:24:29.7122046Z Mounting volumes.
+2026-01-03T13:24:29.7149614Z Nested mountpoint 
+2026-01-03T13:24:29.7163295Z Nested mountpoint volatile/logs
+2026-01-03T13:24:29.7205687Z Nested mountpoint 
+2026-01-03T13:24:29.7214398Z Nested mountpoint 
+2026-01-03T13:24:29.7274746Z Nested mountpoint 
+2026-01-03T13:24:29.8480737Z Creating container.
+2026-01-03T13:24:29.8482029Z Creating pipes for streaming container io.
+2026-01-03T13:24:29.8483239Z Creating stdout named pipe at /podr/container/pipe/6d242dee34c6_gigboard-api/stdout_393207297d0b4bfb875d03f4f4fc407b.
+2026-01-03T13:24:29.8485565Z Successfully created stdout named pipe at: /podr/container/pipe/6d242dee34c6_gigboard-api/stdout_393207297d0b4bfb875d03f4f4fc407b.
+2026-01-03T13:24:29.8486740Z Opening named pipe /podr/container/pipe/6d242dee34c6_gigboard-api/stdout_393207297d0b4bfb875d03f4f4fc407b for reading in non-blocking mode.
+2026-01-03T13:24:29.8488145Z Successfully opened named pipe: /podr/container/pipe/6d242dee34c6_gigboard-api/stdout_393207297d0b4bfb875d03f4f4fc407b.
+2026-01-03T13:24:29.8489338Z Successfully removed non-blocking flag from /podr/container/pipe/6d242dee34c6_gigboard-api/stdout_393207297d0b4bfb875d03f4f4fc407b.
+2026-01-03T13:24:29.8490638Z Creating stderr named pipe at /podr/container/pipe/6d242dee34c6_gigboard-api/stderr_2d558348ae114c5e98626e715f0974fa.
+2026-01-03T13:24:29.8492268Z Successfully created stderr named pipe at: /podr/container/pipe/6d242dee34c6_gigboard-api/stderr_2d558348ae114c5e98626e715f0974fa.
+2026-01-03T13:24:29.8493414Z Opening named pipe /podr/container/pipe/6d242dee34c6_gigboard-api/stderr_2d558348ae114c5e98626e715f0974fa for reading in non-blocking mode.
+2026-01-03T13:24:29.8494699Z Successfully opened named pipe: /podr/container/pipe/6d242dee34c6_gigboard-api/stderr_2d558348ae114c5e98626e715f0974fa.
+2026-01-03T13:24:29.8495767Z Successfully removed non-blocking flag from /podr/container/pipe/6d242dee34c6_gigboard-api/stderr_2d558348ae114c5e98626e715f0974fa.
+2026-01-03T13:24:29.8577056Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:24:30.1659004Z Starting container: 6d242dee34c6_gigboard-api.
+2026-01-03T13:24:30.1850268Z Starting watchers and probes.
+2026-01-03T13:24:30.1874943Z Starting metrics collection.
+2026-01-03T13:24:30.1899686Z Container is running.
+2026-01-03T13:24:30.2138268Z Container start method finished after 978 ms.
+2026-01-03T13:25:05.5497293Z Container has finished running with exit code: 134.
+2026-01-03T13:25:05.5499008Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:25:05.5503215Z Stop and delete container. Retry count = 0
+2026-01-03T13:25:05.5504876Z Stopping container: 6d242dee34c6_gigboard-api.
+2026-01-03T13:25:05.6374436Z Deleting container: 6d242dee34c6_gigboard-api. Retry count = 0
+2026-01-03T13:25:05.7334925Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:25:05.7341375Z Container is terminated. Total time elapsed: 183 ms.
+2026-01-03T13:25:05.7344296Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:25:05.7396481Z Site startup probe failed after 35.5242453 seconds.
+2026-01-03T13:25:05.8310551Z Failed to start site. Revert by stopping site.
+2026-01-03T13:25:05.8314241Z Site: gigboard-api stopped.
+2026-01-03T13:25:32.1875271Z Container start method called.
+2026-01-03T13:25:32.1879976Z Establishing network.
+2026-01-03T13:25:32.1881930Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:25:32.3116199Z Container is starting.
+2026-01-03T13:25:32.3118173Z Establishing user namespace if not established already.
+2026-01-03T13:25:32.3166353Z Establishing network if not established already.
+2026-01-03T13:25:32.3169254Z Mounting volumes.
+2026-01-03T13:25:32.3174865Z Nested mountpoint 
+2026-01-03T13:25:32.3192415Z Nested mountpoint volatile/logs
+2026-01-03T13:25:32.3219631Z Nested mountpoint 
+2026-01-03T13:25:32.3236731Z Nested mountpoint 
+2026-01-03T13:25:32.3273042Z Nested mountpoint 
+2026-01-03T13:25:32.4109971Z Creating container.
+2026-01-03T13:25:32.4110809Z Creating pipes for streaming container io.
+2026-01-03T13:25:32.4111502Z Creating stdout named pipe at /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stdout_a8ed89f533a94b68b07d518bac662bb3.
+2026-01-03T13:25:32.4113089Z Successfully created stdout named pipe at: /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stdout_a8ed89f533a94b68b07d518bac662bb3.
+2026-01-03T13:25:32.4113774Z Opening named pipe /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stdout_a8ed89f533a94b68b07d518bac662bb3 for reading in non-blocking mode.
+2026-01-03T13:25:32.4114542Z Successfully opened named pipe: /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stdout_a8ed89f533a94b68b07d518bac662bb3.
+2026-01-03T13:25:32.4115256Z Successfully removed non-blocking flag from /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stdout_a8ed89f533a94b68b07d518bac662bb3.
+2026-01-03T13:25:32.4116224Z Creating stderr named pipe at /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stderr_c1e5d8b828db401eb6ca05f8828253ea.
+2026-01-03T13:25:32.4117700Z Successfully created stderr named pipe at: /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stderr_c1e5d8b828db401eb6ca05f8828253ea.
+2026-01-03T13:25:32.4119146Z Opening named pipe /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stderr_c1e5d8b828db401eb6ca05f8828253ea for reading in non-blocking mode.
+2026-01-03T13:25:32.4120742Z Successfully opened named pipe: /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stderr_c1e5d8b828db401eb6ca05f8828253ea.
+2026-01-03T13:25:32.4121929Z Successfully removed non-blocking flag from /podr/container/pipe/9efdaaa0bf6a_gigboard-api/stderr_c1e5d8b828db401eb6ca05f8828253ea.
+2026-01-03T13:25:32.4124640Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:25:32.7436316Z Starting container: 9efdaaa0bf6a_gigboard-api.
+2026-01-03T13:25:32.7726127Z Starting watchers and probes.
+2026-01-03T13:25:32.7786281Z Starting metrics collection.
+2026-01-03T13:25:32.7788265Z Container is running.
+2026-01-03T13:25:32.8699297Z Container start method finished after 682 ms.
+2026-01-03T13:26:14.8590529Z Container has finished running with exit code: 134.
+2026-01-03T13:26:14.8592166Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:26:14.8936945Z Stop and delete container. Retry count = 0
+2026-01-03T13:26:14.8939342Z Stopping container: 9efdaaa0bf6a_gigboard-api.
+2026-01-03T13:26:14.9880043Z Deleting container: 9efdaaa0bf6a_gigboard-api. Retry count = 0
+2026-01-03T13:26:15.1253533Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:26:15.1257366Z Container is terminated. Total time elapsed: 266 ms.
+2026-01-03T13:26:15.1259744Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:26:15.1832428Z Site startup probe failed after 42.3125119 seconds.
+2026-01-03T13:26:15.3250257Z Failed to start site. Revert by stopping site.
+2026-01-03T13:26:15.3254738Z Site: gigboard-api stopped.
+2026-01-03T13:26:41.3134316Z Container start method called.
+2026-01-03T13:26:41.3136977Z Establishing network.
+2026-01-03T13:26:41.3152994Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:26:41.4501140Z Container is starting.
+2026-01-03T13:26:41.4503223Z Establishing user namespace if not established already.
+2026-01-03T13:26:41.4504738Z Establishing network if not established already.
+2026-01-03T13:26:41.4506217Z Mounting volumes.
+2026-01-03T13:26:41.4508054Z Nested mountpoint 
+2026-01-03T13:26:41.4517601Z Nested mountpoint volatile/logs
+2026-01-03T13:26:41.4536402Z Nested mountpoint 
+2026-01-03T13:26:41.4542547Z Nested mountpoint 
+2026-01-03T13:26:41.4549069Z Nested mountpoint 
+2026-01-03T13:26:41.5496698Z Creating container.
+2026-01-03T13:26:41.5498334Z Creating pipes for streaming container io.
+2026-01-03T13:26:41.5499673Z Creating stdout named pipe at /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stdout_32b8e996a5004579b3e745fbf221ba53.
+2026-01-03T13:26:41.5506481Z Successfully created stdout named pipe at: /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stdout_32b8e996a5004579b3e745fbf221ba53.
+2026-01-03T13:26:41.5508131Z Opening named pipe /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stdout_32b8e996a5004579b3e745fbf221ba53 for reading in non-blocking mode.
+2026-01-03T13:26:41.5510093Z Successfully opened named pipe: /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stdout_32b8e996a5004579b3e745fbf221ba53.
+2026-01-03T13:26:41.5511746Z Successfully removed non-blocking flag from /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stdout_32b8e996a5004579b3e745fbf221ba53.
+2026-01-03T13:26:41.5513440Z Creating stderr named pipe at /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stderr_32e7e0603aa9456c825d33af78107d2f.
+2026-01-03T13:26:41.5515691Z Successfully created stderr named pipe at: /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stderr_32e7e0603aa9456c825d33af78107d2f.
+2026-01-03T13:26:41.5517145Z Opening named pipe /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stderr_32e7e0603aa9456c825d33af78107d2f for reading in non-blocking mode.
+2026-01-03T13:26:41.5520119Z Successfully opened named pipe: /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stderr_32e7e0603aa9456c825d33af78107d2f.
+2026-01-03T13:26:41.5522592Z Successfully removed non-blocking flag from /podr/container/pipe/ac65c4dd2f5e_gigboard-api/stderr_32e7e0603aa9456c825d33af78107d2f.
+2026-01-03T13:26:41.5524042Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:26:41.7426235Z Starting container: ac65c4dd2f5e_gigboard-api.
+2026-01-03T13:26:41.7611076Z Starting watchers and probes.
+2026-01-03T13:26:41.7613751Z Starting metrics collection.
+2026-01-03T13:26:41.7616554Z Container is running.
+2026-01-03T13:26:41.7856041Z Container start method finished after 472 ms.
+2026-01-03T13:27:52.8374736Z Container has finished running with exit code: 134.
+2026-01-03T13:27:52.8448226Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:27:52.8731861Z Stop and delete container. Retry count = 0
+2026-01-03T13:27:52.8734255Z Stopping container: ac65c4dd2f5e_gigboard-api.
+2026-01-03T13:27:53.0178256Z Deleting container: ac65c4dd2f5e_gigboard-api. Retry count = 0
+2026-01-03T13:27:53.5362823Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:27:53.5403840Z Container is terminated. Total time elapsed: 691 ms.
+2026-01-03T13:27:53.5459718Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:27:53.7194281Z Site startup probe failed after 71.9254425 seconds.
+2026-01-03T13:27:54.3596132Z Failed to start site. Revert by stopping site.
+2026-01-03T13:27:54.4006339Z Site: gigboard-api stopped.
+2026-01-03T13:28:22.9409658Z Container start method called.
+2026-01-03T13:28:22.9411645Z Establishing network.
+2026-01-03T13:28:22.9413120Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:28:23.0689760Z Container is starting.
+2026-01-03T13:28:23.0692801Z Establishing user namespace if not established already.
+2026-01-03T13:28:23.0694856Z Establishing network if not established already.
+2026-01-03T13:28:23.0696269Z Mounting volumes.
+2026-01-03T13:28:23.0698684Z Nested mountpoint 
+2026-01-03T13:28:23.0709506Z Nested mountpoint volatile/logs
+2026-01-03T13:28:23.0820594Z Nested mountpoint 
+2026-01-03T13:28:23.0850387Z Nested mountpoint 
+2026-01-03T13:28:23.0896092Z Nested mountpoint 
+2026-01-03T13:28:23.1739942Z Creating container.
+2026-01-03T13:28:23.1742393Z Creating pipes for streaming container io.
+2026-01-03T13:28:23.1745550Z Creating stdout named pipe at /podr/container/pipe/d7bc06c3ea19_gigboard-api/stdout_893b358a5bb245cdb12e242906bebf1f.
+2026-01-03T13:28:23.1749133Z Successfully created stdout named pipe at: /podr/container/pipe/d7bc06c3ea19_gigboard-api/stdout_893b358a5bb245cdb12e242906bebf1f.
+2026-01-03T13:28:23.1750470Z Opening named pipe /podr/container/pipe/d7bc06c3ea19_gigboard-api/stdout_893b358a5bb245cdb12e242906bebf1f for reading in non-blocking mode.
+2026-01-03T13:28:23.1751779Z Successfully opened named pipe: /podr/container/pipe/d7bc06c3ea19_gigboard-api/stdout_893b358a5bb245cdb12e242906bebf1f.
+2026-01-03T13:28:23.1752700Z Successfully removed non-blocking flag from /podr/container/pipe/d7bc06c3ea19_gigboard-api/stdout_893b358a5bb245cdb12e242906bebf1f.
+2026-01-03T13:28:23.1755388Z Creating stderr named pipe at /podr/container/pipe/d7bc06c3ea19_gigboard-api/stderr_5ede3c8602b7495685d56e8f7a6df52d.
+2026-01-03T13:28:23.1764425Z Successfully created stderr named pipe at: /podr/container/pipe/d7bc06c3ea19_gigboard-api/stderr_5ede3c8602b7495685d56e8f7a6df52d.
+2026-01-03T13:28:23.1765772Z Opening named pipe /podr/container/pipe/d7bc06c3ea19_gigboard-api/stderr_5ede3c8602b7495685d56e8f7a6df52d for reading in non-blocking mode.
+2026-01-03T13:28:23.1768797Z Successfully opened named pipe: /podr/container/pipe/d7bc06c3ea19_gigboard-api/stderr_5ede3c8602b7495685d56e8f7a6df52d.
+2026-01-03T13:28:23.1774614Z Successfully removed non-blocking flag from /podr/container/pipe/d7bc06c3ea19_gigboard-api/stderr_5ede3c8602b7495685d56e8f7a6df52d.
+2026-01-03T13:28:23.1781665Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:28:23.4453418Z Starting container: d7bc06c3ea19_gigboard-api.
+2026-01-03T13:28:23.4672230Z Starting watchers and probes.
+2026-01-03T13:28:23.4676401Z Starting metrics collection.
+2026-01-03T13:28:23.4725765Z Container is running.
+2026-01-03T13:28:23.4886937Z Container start method finished after 547 ms.
+2026-01-03T13:28:54.2112028Z Container has finished running with exit code: 134.
+2026-01-03T13:28:54.2113526Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:28:54.2157701Z Stop and delete container. Retry count = 0
+2026-01-03T13:28:54.2162815Z Stopping container: d7bc06c3ea19_gigboard-api.
+2026-01-03T13:28:54.6515497Z Deleting container: d7bc06c3ea19_gigboard-api. Retry count = 0
+2026-01-03T13:28:54.8173976Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:28:54.8175836Z Container is terminated. Total time elapsed: 606 ms.
+2026-01-03T13:28:54.8177547Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:28:54.8668427Z Site startup probe failed after 31.376294 seconds.
+2026-01-03T13:28:54.9685244Z Failed to start site. Revert by stopping site.
+2026-01-03T13:28:54.9691292Z Site: gigboard-api stopped.
+2026-01-03T13:29:01.9204081Z Container start method called.
+2026-01-03T13:29:01.9207012Z Establishing network.
+2026-01-03T13:29:01.9208808Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:29:02.1359775Z Container is starting.
+2026-01-03T13:29:02.1363145Z Establishing user namespace if not established already.
+2026-01-03T13:29:02.1365168Z Establishing network if not established already.
+2026-01-03T13:29:02.1366918Z Mounting volumes.
+2026-01-03T13:29:02.1368953Z Nested mountpoint 
+2026-01-03T13:29:02.1377448Z Nested mountpoint volatile/logs
+2026-01-03T13:29:02.1458596Z Nested mountpoint 
+2026-01-03T13:29:02.1469767Z Nested mountpoint 
+2026-01-03T13:29:02.1476877Z Nested mountpoint 
+2026-01-03T13:29:02.2571375Z Creating container.
+2026-01-03T13:29:02.2573226Z Creating pipes for streaming container io.
+2026-01-03T13:29:02.2574709Z Creating stdout named pipe at /podr/container/pipe/560398060077_gigboard-api/stdout_60d588850db34918b1d586ba2c8d3b42.
+2026-01-03T13:29:02.2576856Z Successfully created stdout named pipe at: /podr/container/pipe/560398060077_gigboard-api/stdout_60d588850db34918b1d586ba2c8d3b42.
+2026-01-03T13:29:02.2578059Z Opening named pipe /podr/container/pipe/560398060077_gigboard-api/stdout_60d588850db34918b1d586ba2c8d3b42 for reading in non-blocking mode.
+2026-01-03T13:29:02.2579433Z Successfully opened named pipe: /podr/container/pipe/560398060077_gigboard-api/stdout_60d588850db34918b1d586ba2c8d3b42.
+2026-01-03T13:29:02.2580686Z Successfully removed non-blocking flag from /podr/container/pipe/560398060077_gigboard-api/stdout_60d588850db34918b1d586ba2c8d3b42.
+2026-01-03T13:29:02.2582240Z Creating stderr named pipe at /podr/container/pipe/560398060077_gigboard-api/stderr_a91ba311a5fd4bf292ac4d701cd6425d.
+2026-01-03T13:29:02.2583946Z Successfully created stderr named pipe at: /podr/container/pipe/560398060077_gigboard-api/stderr_a91ba311a5fd4bf292ac4d701cd6425d.
+2026-01-03T13:29:02.2585109Z Opening named pipe /podr/container/pipe/560398060077_gigboard-api/stderr_a91ba311a5fd4bf292ac4d701cd6425d for reading in non-blocking mode.
+2026-01-03T13:29:02.2586450Z Successfully opened named pipe: /podr/container/pipe/560398060077_gigboard-api/stderr_a91ba311a5fd4bf292ac4d701cd6425d.
+2026-01-03T13:29:02.2587698Z Successfully removed non-blocking flag from /podr/container/pipe/560398060077_gigboard-api/stderr_a91ba311a5fd4bf292ac4d701cd6425d.
+2026-01-03T13:29:02.2589020Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:29:02.4768178Z Starting container: 560398060077_gigboard-api.
+2026-01-03T13:29:02.4968662Z Starting watchers and probes.
+2026-01-03T13:29:02.4970923Z Starting metrics collection.
+2026-01-03T13:29:02.4972553Z Container is running.
+2026-01-03T13:29:03.2840245Z Container start method finished after 1363 ms.
+2026-01-03T13:29:33.4472454Z Container has finished running with exit code: 134.
+2026-01-03T13:29:33.4473845Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:29:33.4477349Z Stop and delete container. Retry count = 0
+2026-01-03T13:29:33.4500918Z Stopping container: 560398060077_gigboard-api.
+2026-01-03T13:29:33.4905628Z Deleting container: 560398060077_gigboard-api. Retry count = 0
+2026-01-03T13:29:33.6105608Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:29:33.6118128Z Container is terminated. Total time elapsed: 164 ms.
+2026-01-03T13:29:33.6120737Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:29:33.6357326Z Site startup probe failed after 30.350321 seconds.
+2026-01-03T13:29:33.7642740Z Failed to start site. Revert by stopping site.
+2026-01-03T13:29:33.7660048Z Site: gigboard-api stopped.
+2026-01-03T13:30:38.9503058Z Container start method called.
+2026-01-03T13:30:38.9507334Z Establishing network.
+2026-01-03T13:30:38.9508801Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:30:39.1152537Z Image appsvc/dotnetcore:8.0_20251016.4.tuxprod is pulled from registry 10.1.0.7:13209
+2026-01-03T13:30:39.1154093Z Container is starting.
+2026-01-03T13:30:39.1155771Z Establishing user namespace if not established already.
+2026-01-03T13:30:39.1158201Z Establishing network if not established already.
+2026-01-03T13:30:39.1171347Z Mounting volumes.
+2026-01-03T13:30:39.1174965Z Nested mountpoint 
+2026-01-03T13:30:39.1186293Z Nested mountpoint volatile/logs
+2026-01-03T13:30:39.1286949Z Nested mountpoint 
+2026-01-03T13:30:39.1340402Z Nested mountpoint 
+2026-01-03T13:30:39.1392065Z Nested mountpoint 
+2026-01-03T13:30:39.2743491Z Creating container.
+2026-01-03T13:30:39.2745413Z Creating pipes for streaming container io.
+2026-01-03T13:30:39.2747235Z Creating stdout named pipe at /podr/container/pipe/7086bd12c514_gigboard-api/stdout_49bab4271b634457b9d7b52dc51db89a.
+2026-01-03T13:30:39.2756228Z Successfully created stdout named pipe at: /podr/container/pipe/7086bd12c514_gigboard-api/stdout_49bab4271b634457b9d7b52dc51db89a.
+2026-01-03T13:30:39.2763225Z Opening named pipe /podr/container/pipe/7086bd12c514_gigboard-api/stdout_49bab4271b634457b9d7b52dc51db89a for reading in non-blocking mode.
+2026-01-03T13:30:39.2764968Z Successfully opened named pipe: /podr/container/pipe/7086bd12c514_gigboard-api/stdout_49bab4271b634457b9d7b52dc51db89a.
+2026-01-03T13:30:39.2772904Z Successfully removed non-blocking flag from /podr/container/pipe/7086bd12c514_gigboard-api/stdout_49bab4271b634457b9d7b52dc51db89a.
+2026-01-03T13:30:39.2774342Z Creating stderr named pipe at /podr/container/pipe/7086bd12c514_gigboard-api/stderr_f9dd24e96da2459f97e0feaf46cf442e.
+2026-01-03T13:30:39.2776006Z Successfully created stderr named pipe at: /podr/container/pipe/7086bd12c514_gigboard-api/stderr_f9dd24e96da2459f97e0feaf46cf442e.
+2026-01-03T13:30:39.2777068Z Opening named pipe /podr/container/pipe/7086bd12c514_gigboard-api/stderr_f9dd24e96da2459f97e0feaf46cf442e for reading in non-blocking mode.
+2026-01-03T13:30:39.2780590Z Successfully opened named pipe: /podr/container/pipe/7086bd12c514_gigboard-api/stderr_f9dd24e96da2459f97e0feaf46cf442e.
+2026-01-03T13:30:39.2789768Z Successfully removed non-blocking flag from /podr/container/pipe/7086bd12c514_gigboard-api/stderr_f9dd24e96da2459f97e0feaf46cf442e.
+2026-01-03T13:30:39.2808135Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.7:13209 and fully qualified image name: 10.1.0.7:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:30:39.6520160Z Starting container: 7086bd12c514_gigboard-api.
+2026-01-03T13:30:39.6960104Z Starting watchers and probes.
+2026-01-03T13:30:39.6973749Z Starting metrics collection.
+2026-01-03T13:30:39.6977595Z Container is running.
+2026-01-03T13:30:39.7493144Z Container start method finished after 798 ms.
+2026-01-03T13:31:17.9817451Z Container has finished running with exit code: 134.
+2026-01-03T13:31:17.9835004Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:31:17.9857987Z Stop and delete container. Retry count = 0
+2026-01-03T13:31:17.9863856Z Stopping container: 7086bd12c514_gigboard-api.
+2026-01-03T13:31:18.0868445Z Deleting container: 7086bd12c514_gigboard-api. Retry count = 0
+2026-01-03T13:31:18.2127528Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:31:18.2129320Z Container is terminated. Total time elapsed: 229 ms.
+2026-01-03T13:31:18.2130594Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:31:18.2238097Z Site startup probe failed after 38.4649864 seconds.
+2026-01-03T13:31:18.2956874Z Failed to start site. Revert by stopping site.
+2026-01-03T13:31:18.2960938Z Site: gigboard-api stopped.
+2026-01-03T13:31:24.5085395Z Container start method called.
+2026-01-03T13:31:24.5088072Z Establishing network.
+2026-01-03T13:31:24.5089561Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T13:31:24.6782636Z Container is starting.
+2026-01-03T13:31:24.6784783Z Establishing user namespace if not established already.
+2026-01-03T13:31:24.6785886Z Establishing network if not established already.
+2026-01-03T13:31:24.6787249Z Mounting volumes.
+2026-01-03T13:31:24.6789112Z Nested mountpoint 
+2026-01-03T13:31:24.6822478Z Nested mountpoint volatile/logs
+2026-01-03T13:31:24.6844605Z Nested mountpoint 
+2026-01-03T13:31:24.6980817Z Nested mountpoint 
+2026-01-03T13:31:24.7005014Z Nested mountpoint 
+2026-01-03T13:31:24.8154116Z Creating container.
+2026-01-03T13:31:24.8155457Z Creating pipes for streaming container io.
+2026-01-03T13:31:24.8156584Z Creating stdout named pipe at /podr/container/pipe/87b47897314b_gigboard-api/stdout_78aed68f9448407eacde0f43bfcd7ab2.
+2026-01-03T13:31:24.8161196Z Successfully created stdout named pipe at: /podr/container/pipe/87b47897314b_gigboard-api/stdout_78aed68f9448407eacde0f43bfcd7ab2.
+2026-01-03T13:31:24.8163188Z Opening named pipe /podr/container/pipe/87b47897314b_gigboard-api/stdout_78aed68f9448407eacde0f43bfcd7ab2 for reading in non-blocking mode.
+2026-01-03T13:31:24.8165199Z Successfully opened named pipe: /podr/container/pipe/87b47897314b_gigboard-api/stdout_78aed68f9448407eacde0f43bfcd7ab2.
+2026-01-03T13:31:24.8167766Z Successfully removed non-blocking flag from /podr/container/pipe/87b47897314b_gigboard-api/stdout_78aed68f9448407eacde0f43bfcd7ab2.
+2026-01-03T13:31:24.8169839Z Creating stderr named pipe at /podr/container/pipe/87b47897314b_gigboard-api/stderr_ee026a73db704b189e1eba3d68dde1a5.
+2026-01-03T13:31:24.8173366Z Successfully created stderr named pipe at: /podr/container/pipe/87b47897314b_gigboard-api/stderr_ee026a73db704b189e1eba3d68dde1a5.
+2026-01-03T13:31:24.8174487Z Opening named pipe /podr/container/pipe/87b47897314b_gigboard-api/stderr_ee026a73db704b189e1eba3d68dde1a5 for reading in non-blocking mode.
+2026-01-03T13:31:24.8175859Z Successfully opened named pipe: /podr/container/pipe/87b47897314b_gigboard-api/stderr_ee026a73db704b189e1eba3d68dde1a5.
+2026-01-03T13:31:24.8176948Z Successfully removed non-blocking flag from /podr/container/pipe/87b47897314b_gigboard-api/stderr_ee026a73db704b189e1eba3d68dde1a5.
+2026-01-03T13:31:24.8178072Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.7:13209 and fully qualified image name: 10.1.0.7:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T13:31:25.1026353Z Starting container: 87b47897314b_gigboard-api.
+2026-01-03T13:31:25.1301346Z Starting watchers and probes.
+2026-01-03T13:31:25.1304162Z Starting metrics collection.
+2026-01-03T13:31:25.1305842Z Container is running.
+2026-01-03T13:31:25.1457890Z Container start method finished after 637 ms.
+2026-01-03T13:32:05.3424629Z Container has finished running with exit code: 134.
+2026-01-03T13:32:05.3433586Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T13:32:05.3437868Z Stop and delete container. Retry count = 0
+2026-01-03T13:32:05.3442760Z Stopping container: 87b47897314b_gigboard-api.
+2026-01-03T13:32:05.4322091Z Deleting container: 87b47897314b_gigboard-api. Retry count = 0
+2026-01-03T13:32:05.6169937Z Container spec TerminationMessagePolicy  path 
+2026-01-03T13:32:05.6200934Z Container is terminated. Total time elapsed: 276 ms.
+2026-01-03T13:32:05.6214645Z Site container: gigboard-api terminated during site startup.
+2026-01-03T13:32:05.6689159Z Site startup probe failed after 40.5197432 seconds.
+2026-01-03T13:32:05.8089339Z Failed to start site. Revert by stopping site.
+2026-01-03T13:32:05.8125391Z Site: gigboard-api stopped.
+2026-01-03T14:17:52.6400292Z Container start method called.
+2026-01-03T14:17:52.6575279Z Establishing network.
+2026-01-03T14:17:52.6577970Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T14:17:53.5468480Z Image appsvc/dotnetcore:8.0_20251016.4.tuxprod is pulled from registry 10.1.0.4:13209
+2026-01-03T14:17:53.5482751Z Container is starting.
+2026-01-03T14:17:53.5485166Z Establishing user namespace if not established already.
+2026-01-03T14:17:53.5486548Z Establishing network if not established already.
+2026-01-03T14:17:53.5491973Z Mounting volumes.
+2026-01-03T14:17:53.5496063Z Nested mountpoint site/wwwroot
+2026-01-03T14:17:53.5575496Z Nested mountpoint volatile/logs
+2026-01-03T14:17:53.6196442Z Nested mountpoint 
+2026-01-03T14:17:53.6584131Z Nested mountpoint 
+2026-01-03T14:17:53.7512932Z Nested mountpoint 
+2026-01-03T14:17:53.7765542Z Nested mountpoint 
+2026-01-03T14:17:55.4542989Z Creating container.
+2026-01-03T14:17:55.4657654Z Creating pipes for streaming container io.
+2026-01-03T14:17:55.4690163Z Creating stdout named pipe at /podr/container/pipe/4240b5b3ca23_gigboard-api/stdout_1af0218dd5504edfbd0e0e8fa0c35d7b.
+2026-01-03T14:17:55.4864009Z Successfully created stdout named pipe at: /podr/container/pipe/4240b5b3ca23_gigboard-api/stdout_1af0218dd5504edfbd0e0e8fa0c35d7b.
+2026-01-03T14:17:55.4869891Z Opening named pipe /podr/container/pipe/4240b5b3ca23_gigboard-api/stdout_1af0218dd5504edfbd0e0e8fa0c35d7b for reading in non-blocking mode.
+2026-01-03T14:17:55.4967106Z Successfully opened named pipe: /podr/container/pipe/4240b5b3ca23_gigboard-api/stdout_1af0218dd5504edfbd0e0e8fa0c35d7b.
+2026-01-03T14:17:55.5024488Z Successfully removed non-blocking flag from /podr/container/pipe/4240b5b3ca23_gigboard-api/stdout_1af0218dd5504edfbd0e0e8fa0c35d7b.
+2026-01-03T14:17:55.5028256Z Creating stderr named pipe at /podr/container/pipe/4240b5b3ca23_gigboard-api/stderr_2853c9707e70462d83dde5e753c5d5d5.
+2026-01-03T14:17:55.5077621Z Successfully created stderr named pipe at: /podr/container/pipe/4240b5b3ca23_gigboard-api/stderr_2853c9707e70462d83dde5e753c5d5d5.
+2026-01-03T14:17:55.5079912Z Opening named pipe /podr/container/pipe/4240b5b3ca23_gigboard-api/stderr_2853c9707e70462d83dde5e753c5d5d5 for reading in non-blocking mode.
+2026-01-03T14:17:55.5082866Z Successfully opened named pipe: /podr/container/pipe/4240b5b3ca23_gigboard-api/stderr_2853c9707e70462d83dde5e753c5d5d5.
+2026-01-03T14:17:55.5089899Z Successfully removed non-blocking flag from /podr/container/pipe/4240b5b3ca23_gigboard-api/stderr_2853c9707e70462d83dde5e753c5d5d5.
+2026-01-03T14:17:55.5171652Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T14:17:56.7146652Z Starting container: 4240b5b3ca23_gigboard-api.
+2026-01-03T14:17:56.8474453Z Starting watchers and probes.
+2026-01-03T14:17:56.8833675Z Starting metrics collection.
+2026-01-03T14:17:56.8881579Z Container is running.
+2026-01-03T14:17:57.0138124Z Container start method finished after 4370 ms.
+2026-01-03T14:18:28.0005370Z Container has finished running with exit code: 134.
+2026-01-03T14:18:28.0074578Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T14:18:28.0170970Z Stop and delete container. Retry count = 0
+2026-01-03T14:18:28.0189135Z Stopping container: 4240b5b3ca23_gigboard-api.
+2026-01-03T14:18:28.0650689Z Deleting container: 4240b5b3ca23_gigboard-api. Retry count = 0
+2026-01-03T14:18:28.2263565Z Container spec TerminationMessagePolicy  path 
+2026-01-03T14:18:28.2297540Z Container is terminated. Total time elapsed: 221 ms.
+2026-01-03T14:18:28.2303995Z Site container: gigboard-api terminated during site startup.
+2026-01-03T14:18:28.2521846Z Site startup probe failed after 31.1689218 seconds.
+2026-01-03T14:18:28.3656155Z Failed to start site. Revert by stopping site.
+2026-01-03T14:18:28.3784212Z Site: gigboard-api stopped.
+2026-01-03T14:18:37.5210321Z Container start method called.
+2026-01-03T14:18:37.5212260Z Establishing network.
+2026-01-03T14:18:37.5214956Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T14:18:37.6936795Z Container is starting.
+2026-01-03T14:18:37.6939026Z Establishing user namespace if not established already.
+2026-01-03T14:18:37.6941471Z Establishing network if not established already.
+2026-01-03T14:18:37.6943255Z Mounting volumes.
+2026-01-03T14:18:37.6945150Z Nested mountpoint site/wwwroot
+2026-01-03T14:18:37.6954785Z Nested mountpoint volatile/logs
+2026-01-03T14:18:37.7013952Z Nested mountpoint 
+2026-01-03T14:18:37.7025630Z Nested mountpoint 
+2026-01-03T14:18:37.7083537Z Nested mountpoint 
+2026-01-03T14:18:37.7147707Z Nested mountpoint 
+2026-01-03T14:18:37.9066886Z Creating container.
+2026-01-03T14:18:37.9068524Z Creating pipes for streaming container io.
+2026-01-03T14:18:37.9070013Z Creating stdout named pipe at /podr/container/pipe/7838bf86ab57_gigboard-api/stdout_4144dd5cb1014347bcd8ec64ca3a34fb.
+2026-01-03T14:18:37.9072528Z Successfully created stdout named pipe at: /podr/container/pipe/7838bf86ab57_gigboard-api/stdout_4144dd5cb1014347bcd8ec64ca3a34fb.
+2026-01-03T14:18:37.9116068Z Opening named pipe /podr/container/pipe/7838bf86ab57_gigboard-api/stdout_4144dd5cb1014347bcd8ec64ca3a34fb for reading in non-blocking mode.
+2026-01-03T14:18:37.9148557Z Successfully opened named pipe: /podr/container/pipe/7838bf86ab57_gigboard-api/stdout_4144dd5cb1014347bcd8ec64ca3a34fb.
+2026-01-03T14:18:37.9157096Z Successfully removed non-blocking flag from /podr/container/pipe/7838bf86ab57_gigboard-api/stdout_4144dd5cb1014347bcd8ec64ca3a34fb.
+2026-01-03T14:18:37.9160763Z Creating stderr named pipe at /podr/container/pipe/7838bf86ab57_gigboard-api/stderr_74a6267d76c04cb4a027c42098059e37.
+2026-01-03T14:18:37.9163273Z Successfully created stderr named pipe at: /podr/container/pipe/7838bf86ab57_gigboard-api/stderr_74a6267d76c04cb4a027c42098059e37.
+2026-01-03T14:18:37.9164524Z Opening named pipe /podr/container/pipe/7838bf86ab57_gigboard-api/stderr_74a6267d76c04cb4a027c42098059e37 for reading in non-blocking mode.
+2026-01-03T14:18:37.9166181Z Successfully opened named pipe: /podr/container/pipe/7838bf86ab57_gigboard-api/stderr_74a6267d76c04cb4a027c42098059e37.
+2026-01-03T14:18:37.9167432Z Successfully removed non-blocking flag from /podr/container/pipe/7838bf86ab57_gigboard-api/stderr_74a6267d76c04cb4a027c42098059e37.
+2026-01-03T14:18:37.9168844Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T14:18:38.1142754Z Starting container: 7838bf86ab57_gigboard-api.
+2026-01-03T14:18:38.1346097Z Starting watchers and probes.
+2026-01-03T14:18:38.1391730Z Starting metrics collection.
+2026-01-03T14:18:38.1401444Z Container is running.
+2026-01-03T14:18:38.1521035Z Container start method finished after 630 ms.
+2026-01-03T14:19:08.2627479Z Container has finished running with exit code: 134.
+2026-01-03T14:19:08.2630327Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T14:19:08.2634328Z Stop and delete container. Retry count = 0
+2026-01-03T14:19:08.2636690Z Stopping container: 7838bf86ab57_gigboard-api.
+2026-01-03T14:19:08.3741936Z Deleting container: 7838bf86ab57_gigboard-api. Retry count = 0
+2026-01-03T14:19:08.4519481Z Container spec TerminationMessagePolicy  path 
+2026-01-03T14:19:08.4526459Z Container is terminated. Total time elapsed: 189 ms.
+2026-01-03T14:19:08.4531516Z Site container: gigboard-api terminated during site startup.
+2026-01-03T14:19:08.4692335Z Site startup probe failed after 30.3161704 seconds.
+2026-01-03T14:19:08.5642467Z Failed to start site. Revert by stopping site.
+2026-01-03T14:19:08.5692439Z Site: gigboard-api stopped.
+2026-01-03T14:19:08.7658457Z Site: gigboard-api will be blocked for 1 minutes till 01/03/2026 14:20:08
+2026-01-03T14:19:13.9234048Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:19.1639353Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:24.3883017Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:29.9758175Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:35.1336949Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:40.1942217Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:45.2772120Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:45.6442018Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:50.6527639Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:19:55.7838659Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:20:00.8469330Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:20:05.9303178Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:20:08.7656713Z Site: gigboard-api is unblocked.
+2026-01-03T14:20:11.4625522Z Container start method called.
+2026-01-03T14:20:11.4628468Z Establishing network.
+2026-01-03T14:20:11.4629994Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T14:20:12.2659087Z Container is starting.
+2026-01-03T14:20:12.2671932Z Establishing user namespace if not established already.
+2026-01-03T14:20:12.2676675Z Establishing network if not established already.
+2026-01-03T14:20:12.2680880Z Mounting volumes.
+2026-01-03T14:20:12.2690312Z Nested mountpoint site/wwwroot
+2026-01-03T14:20:12.2962744Z Nested mountpoint volatile/logs
+2026-01-03T14:20:12.3069463Z Nested mountpoint 
+2026-01-03T14:20:12.3119468Z Nested mountpoint 
+2026-01-03T14:20:12.3239985Z Nested mountpoint 
+2026-01-03T14:20:12.3712352Z Nested mountpoint 
+2026-01-03T14:20:13.2334621Z Creating container.
+2026-01-03T14:20:13.2336098Z Creating pipes for streaming container io.
+2026-01-03T14:20:13.2337329Z Creating stdout named pipe at /podr/container/pipe/2aeccc787345_gigboard-api/stdout_280f9f9988254825b91a04368f903200.
+2026-01-03T14:20:13.2452480Z Successfully created stdout named pipe at: /podr/container/pipe/2aeccc787345_gigboard-api/stdout_280f9f9988254825b91a04368f903200.
+2026-01-03T14:20:13.2454605Z Opening named pipe /podr/container/pipe/2aeccc787345_gigboard-api/stdout_280f9f9988254825b91a04368f903200 for reading in non-blocking mode.
+2026-01-03T14:20:13.2456144Z Successfully opened named pipe: /podr/container/pipe/2aeccc787345_gigboard-api/stdout_280f9f9988254825b91a04368f903200.
+2026-01-03T14:20:13.2459575Z Successfully removed non-blocking flag from /podr/container/pipe/2aeccc787345_gigboard-api/stdout_280f9f9988254825b91a04368f903200.
+2026-01-03T14:20:13.2469275Z Creating stderr named pipe at /podr/container/pipe/2aeccc787345_gigboard-api/stderr_ec1d2be602ea40319dfaa68dedd162fb.
+2026-01-03T14:20:13.2477844Z Successfully created stderr named pipe at: /podr/container/pipe/2aeccc787345_gigboard-api/stderr_ec1d2be602ea40319dfaa68dedd162fb.
+2026-01-03T14:20:13.2488848Z Opening named pipe /podr/container/pipe/2aeccc787345_gigboard-api/stderr_ec1d2be602ea40319dfaa68dedd162fb for reading in non-blocking mode.
+2026-01-03T14:20:13.2492427Z Successfully opened named pipe: /podr/container/pipe/2aeccc787345_gigboard-api/stderr_ec1d2be602ea40319dfaa68dedd162fb.
+2026-01-03T14:20:13.2494851Z Successfully removed non-blocking flag from /podr/container/pipe/2aeccc787345_gigboard-api/stderr_ec1d2be602ea40319dfaa68dedd162fb.
+2026-01-03T14:20:13.2496693Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T14:20:14.3973311Z Starting container: 2aeccc787345_gigboard-api.
+2026-01-03T14:20:14.4200657Z Starting watchers and probes.
+2026-01-03T14:20:14.4210522Z Starting metrics collection.
+2026-01-03T14:20:14.4213687Z Container is running.
+2026-01-03T14:20:14.4692730Z Container start method finished after 3006 ms.
+2026-01-03T14:20:47.4466771Z Container has finished running with exit code: 134.
+2026-01-03T14:20:47.4468635Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T14:20:47.4472628Z Stop and delete container. Retry count = 0
+2026-01-03T14:20:47.4473919Z Stopping container: 2aeccc787345_gigboard-api.
+2026-01-03T14:20:47.5551922Z Deleting container: 2aeccc787345_gigboard-api. Retry count = 0
+2026-01-03T14:20:47.7250124Z Container spec TerminationMessagePolicy  path 
+2026-01-03T14:20:47.7252554Z Container is terminated. Total time elapsed: 278 ms.
+2026-01-03T14:20:47.7253929Z Site container: gigboard-api terminated during site startup.
+2026-01-03T14:20:47.7581135Z Site startup probe failed after 33.2805225 seconds.
+2026-01-03T14:20:47.8762298Z Failed to start site. Revert by stopping site.
+2026-01-03T14:20:47.8771944Z Site: gigboard-api stopped.
+2026-01-03T14:20:48.1289426Z Site: gigboard-api will be blocked for 1 minutes till 01/03/2026 14:21:48
+2026-01-03T14:20:54.0258287Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:20:59.1395628Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:04.2631084Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:09.3234952Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:14.3735199Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:19.4400122Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:24.6269734Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:30.5412963Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:35.6107390Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:40.6879844Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:45.7545843Z Start site prohibitted because the site is being blocked.
+2026-01-03T14:21:48.1306812Z Site: gigboard-api is unblocked.
+2026-01-03T14:21:52.0487554Z Container start method called.
+2026-01-03T14:21:52.0489582Z Establishing network.
+2026-01-03T14:21:52.0490832Z Pulling image: appsvc/dotnetcore:8.0_20251016.4.tuxprod.
+2026-01-03T14:21:52.2151247Z Container is starting.
+2026-01-03T14:21:52.2153866Z Establishing user namespace if not established already.
+2026-01-03T14:21:52.2155367Z Establishing network if not established already.
+2026-01-03T14:21:52.2157003Z Mounting volumes.
+2026-01-03T14:21:52.2159249Z Nested mountpoint site/wwwroot
+2026-01-03T14:21:52.2168151Z Nested mountpoint volatile/logs
+2026-01-03T14:21:52.2211562Z Nested mountpoint 
+2026-01-03T14:21:52.2236657Z Nested mountpoint 
+2026-01-03T14:21:52.2330647Z Nested mountpoint 
+2026-01-03T14:21:52.2343554Z Nested mountpoint 
+2026-01-03T14:21:52.4440754Z Creating container.
+2026-01-03T14:21:52.4441684Z Creating pipes for streaming container io.
+2026-01-03T14:21:52.4442560Z Creating stdout named pipe at /podr/container/pipe/f331a8cdad45_gigboard-api/stdout_1e9849a8560440f9a3d3c4682aaf82e5.
+2026-01-03T14:21:52.4444880Z Successfully created stdout named pipe at: /podr/container/pipe/f331a8cdad45_gigboard-api/stdout_1e9849a8560440f9a3d3c4682aaf82e5.
+2026-01-03T14:21:52.4447655Z Opening named pipe /podr/container/pipe/f331a8cdad45_gigboard-api/stdout_1e9849a8560440f9a3d3c4682aaf82e5 for reading in non-blocking mode.
+2026-01-03T14:21:52.4454372Z Successfully opened named pipe: /podr/container/pipe/f331a8cdad45_gigboard-api/stdout_1e9849a8560440f9a3d3c4682aaf82e5.
+2026-01-03T14:21:52.4456882Z Successfully removed non-blocking flag from /podr/container/pipe/f331a8cdad45_gigboard-api/stdout_1e9849a8560440f9a3d3c4682aaf82e5.
+2026-01-03T14:21:52.4462507Z Creating stderr named pipe at /podr/container/pipe/f331a8cdad45_gigboard-api/stderr_21d12214535842e79e0aa5e6f674e178.
+2026-01-03T14:21:52.4466178Z Successfully created stderr named pipe at: /podr/container/pipe/f331a8cdad45_gigboard-api/stderr_21d12214535842e79e0aa5e6f674e178.
+2026-01-03T14:21:52.4468098Z Opening named pipe /podr/container/pipe/f331a8cdad45_gigboard-api/stderr_21d12214535842e79e0aa5e6f674e178 for reading in non-blocking mode.
+2026-01-03T14:21:52.4472453Z Successfully opened named pipe: /podr/container/pipe/f331a8cdad45_gigboard-api/stderr_21d12214535842e79e0aa5e6f674e178.
+2026-01-03T14:21:52.4474289Z Successfully removed non-blocking flag from /podr/container/pipe/f331a8cdad45_gigboard-api/stderr_21d12214535842e79e0aa5e6f674e178.
+2026-01-03T14:21:52.4476208Z Creating container with image: appsvc/dotnetcore:8.0_20251016.4.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/dotnetcore:8.0_20251016.4.tuxprod
+2026-01-03T14:21:52.6776029Z Starting container: f331a8cdad45_gigboard-api.
+2026-01-03T14:21:52.6984994Z Starting watchers and probes.
+2026-01-03T14:21:52.7008366Z Starting metrics collection.
+2026-01-03T14:21:52.7030785Z Container is running.
+2026-01-03T14:21:52.7350795Z Container start method finished after 686 ms.
+2026-01-03T14:22:41.8505489Z Container has finished running with exit code: 134.
+2026-01-03T14:22:41.8522375Z Container is terminating. Grace period: 5 seconds.
+2026-01-03T14:22:41.9007432Z Stop and delete container. Retry count = 0
+2026-01-03T14:22:41.9009525Z Stopping container: f331a8cdad45_gigboard-api.
+2026-01-03T14:22:42.0930693Z Deleting container: f331a8cdad45_gigboard-api. Retry count = 0
+2026-01-03T14:22:42.4734775Z Container spec TerminationMessagePolicy  path 
+2026-01-03T14:22:42.4815325Z Container is terminated. Total time elapsed: 628 ms.
+2026-01-03T14:22:42.4865046Z Site container: gigboard-api terminated during site startup.
+2026-01-03T14:22:42.5189360Z Site startup probe failed after 49.7829567 seconds.
+2026-01-03T14:22:43.9359165Z Failed to start site. Revert by stopping site.
+2026-01-03T14:22:43.9474492Z Site: gigboard-api stopped.

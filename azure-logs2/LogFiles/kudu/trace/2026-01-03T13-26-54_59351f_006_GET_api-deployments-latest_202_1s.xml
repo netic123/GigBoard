@@ -1,0 +1,8 @@
+<step title="Incoming Request" date="2026-01-03T13:26:54.389" instance="59351f" url="/api/deployments/latest" method="GET" type="request" pid="831,1,5" Accept="*/*" Host="gigboard-api.scm.azurewebsites.net" User-Agent="AZURECLI/2.80.0 (MSI)" Accept-Encoding="gzip, deflate" Authorization="Bea..." x-ms-client-request-id="d5db2c2f-e8a7-11f0-88b9-e46017a99948" X-ARR-LOG-ID="d5db2c2f-e8a7-11f0-88b9-e46017a99948" CLIENT-IP="90.142.42.37:55694" X-SITE-DEPLOYMENT-ID="gigboard-api" WAS-DEFAULT-HOSTNAME="gigboard-api.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/deployments/latest" X-Client-IP="90.142.42.37" X-Client-Port="55694" >
+  <step title="DeploymentService.GetResult" date="2026-01-03T13:26:54.444" >
+    <step title="DeploymentService.GetLatestDeployment" date="2026-01-03T13:26:54.454" >
+      <step title="DeploymentManager.GetResults" date="2026-01-03T13:26:54.481" /><!-- duration: 741ms -->
+    </step><!-- duration: 778ms -->
+  </step><!-- duration: 801ms -->
+  <step title="Outgoing response" date="2026-01-03T13:26:55.260" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 8ms -->
+</step><!-- duration: 886ms -->

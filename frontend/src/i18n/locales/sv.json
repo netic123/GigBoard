@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Hitta ditt nästa gig",
-    "subtitle": "Sök bland hundratals konsult- och frilansuppdrag. Logga in med LinkedIn för att söka direkt.",
+    "subtitle": "Sök bland hundratals konsult- och frilansuppdrag. Logga in för att söka direkt.",
     "searchPlaceholder": "Sök på titel, företag eller kompetens...",
     "search": "Sök",
     "gigsCount": "{{count}} gigs",

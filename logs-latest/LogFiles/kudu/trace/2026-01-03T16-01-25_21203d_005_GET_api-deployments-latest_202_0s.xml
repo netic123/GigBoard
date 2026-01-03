@@ -1,0 +1,8 @@
+<step title="Incoming Request" date="2026-01-03T16:01:25.270" instance="21203d" url="/api/deployments/latest?deployer=OneDeploy&amp;time=2026-01-03_16-01-24Z" method="GET" type="request" pid="832,1,20" Host="gigboard-api.scm.azurewebsites.net" User-Agent="GITHUBACTIONS_DeployWebAppToAzure_12db98781916f80704f17490fdf01228addec326b1bdfbe254b0dd54a0f5bb38" Authorization="Bea..." Content-Type="application/json; charset=utf-8" Cookie="ARRAffinity=21203d06e34749c3ba2fa7f146a8d132e87338ceb876def50f7c6a5a580ed2da;Path=/;HttpOnly;Secure;Domain=gigboard-api.scm.azurewebsites.net; ARRAffinitySameSite=21203d06e34749c3ba2fa7f146a8d132e87338ceb876def50f7c6a5a580ed2da;Path=/;HttpOnly;SameSite=None;Secure;Domain=gigboard-api.scm.azurewebsites.net" Content-Length="0" X-ARR-LOG-ID="53e8ba87-d891-4704-9728-129d52887765" CLIENT-IP="20.169.74.99:1042" X-SITE-DEPLOYMENT-ID="gigboard-api" WAS-DEFAULT-HOSTNAME="gigboard-api.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/deployments/latest?deployer=OneDeploy&amp;time=2026-01-03_16-01-24Z" X-Client-IP="20.169.74.99" X-Client-Port="1042" >
+  <step title="DeploymentService.GetResult" date="2026-01-03T16:01:25.287" >
+    <step title="DeploymentService.GetLatestDeployment" date="2026-01-03T16:01:25.290" >
+      <step title="DeploymentManager.GetResults" date="2026-01-03T16:01:25.307" /><!-- duration: 271ms -->
+    </step><!-- duration: 296ms -->
+  </step><!-- duration: 309ms -->
+  <step title="Outgoing response" date="2026-01-03T16:01:25.635" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 3ms -->
+</step><!-- duration: 371ms -->

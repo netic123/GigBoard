@@ -70,6 +70,19 @@ public class ApplicationsController : ControllerBase
         return Ok(MapToApplicationResponse(application));
     }
     
+    // Candidate - Check if already applied to a gig
+    [Authorize]
+    [HttpGet("check/{gigId}")]
+    public async Task<ActionResult<object>> CheckIfApplied(int gigId)
+    {
+        var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+        
+        var existing = await _db.Applications
+            .FirstOrDefaultAsync(a => a.GigId == gigId && a.ApplicantId == userId);
+        
+        return Ok(new { hasApplied = existing != null });
+    }
+    
     // Candidate - Get my applications
     [Authorize]
     [HttpGet("my")]
