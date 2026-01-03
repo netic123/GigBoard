@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from '../components/Layout';
@@ -19,6 +19,9 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Prevent double token exchange (React StrictMode issue)
+  const tokenExchangeAttempted = useRef(false);
 
   const redirectTo = searchParams.get('redirect') || '/';
   const code = searchParams.get('code');
@@ -29,7 +32,9 @@ export default function LoginPage() {
   // Handle LinkedIn callback
   useEffect(() => {
     async function handleLinkedInCallback() {
-      if (code && isLinkedInCallback) {
+      // Prevent duplicate calls (StrictMode causes useEffect to run twice)
+      if (code && isLinkedInCallback && !tokenExchangeAttempted.current) {
+        tokenExchangeAttempted.current = true;
         setIsLoading(true);
         try {
           const response = await loginWithLinkedIn(code, LINKEDIN_REDIRECT_URI);
