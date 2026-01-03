@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import MyGigsPage from './pages/MyGigsPage';
 import CreateGigPage from './pages/CreateGigPage';
+import EditGigPage from './pages/EditGigPage';
 import GigApplicationsPage from './pages/GigApplicationsPage';
 import MyApplicationsPage from './pages/MyApplicationsPage';
 import LeaderboardPage from './pages/LeaderboardPage';
@@ -33,6 +34,7 @@ export default function App() {
           {/* Employer routes */}
           <Route path="/my-gigs" element={<MyGigsPage />} />
           <Route path="/create-gig" element={<CreateGigPage />} />
+          <Route path="/edit-gig/:id" element={<EditGigPage />} />
           <Route path="/gig/:id/applications" element={<GigApplicationsPage />} />
         </Routes>
       </BrowserRouter>
