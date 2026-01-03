@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'backend/**'
-      - '.github/workflows/backend-deploy.yml'
   workflow_dispatch:
 
 env:
@@ -16,6 +13,7 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    name: Build and Deploy Backend
 
     steps:
       - name: Checkout code
@@ -52,4 +50,3 @@ jobs:
       - name: Azure Logout
         run: az logout
         if: always()
-

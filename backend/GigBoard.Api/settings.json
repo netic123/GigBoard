@@ -1,0 +1,4 @@
+﻿[
+  {"name": "ENABLE_ORYX_BUILD", "value": "false"},
+  {"name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "false"}
+]
