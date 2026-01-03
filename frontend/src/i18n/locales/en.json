@@ -164,16 +164,12 @@
     "passwordTooShort": "Password must be at least 6 characters",
     "accountTypes": {
       "personal": {
-        "title": "Personal account",
-        "description": "Apply for gigs as a freelancer"
-      },
-      "company": {
-        "title": "Company account",
-        "description": "Apply for gigs for your consulting firm"
+        "title": "Freelancer",
+        "description": "I'm looking for freelance work"
       },
       "employer": {
         "title": "Employer",
-        "description": "Post gigs and find candidates"
+        "description": "I'm looking for a freelancer"
       }
     }
   },

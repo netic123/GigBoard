@@ -3,9 +3,9 @@ import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
-import { registerPersonal, registerCompany, registerEmployer } from '../services/api';
+import { registerPersonal, registerEmployer } from '../services/api';
 
-type AccountType = 'personal' | 'company' | 'employer';
+type AccountType = 'personal' | 'employer';
 
 const LINKEDIN_CLIENT_ID = import.meta.env.VITE_LINKEDIN_CLIENT_ID;
 const LINKEDIN_REDIRECT_URI = `${window.location.origin}/auth/linkedin/callback`;
@@ -92,19 +92,6 @@ export default function RegisterPage() {
           skills: formData.skills ? formData.skills.split(',').map(s => s.trim()) : undefined,
           yearsOfExperience: formData.yearsOfExperience ? parseInt(formData.yearsOfExperience) : undefined,
         });
-      } else if (accountType === 'company') {
-        response = await registerCompany({
-          email: formData.email,
-          password: formData.password,
-          fullName: formData.fullName,
-          companyName: formData.companyName,
-          organizationNumber: formData.organizationNumber || undefined,
-          companyWebsite: formData.companyWebsite || undefined,
-          phone: formData.phone || undefined,
-          location: formData.location || undefined,
-          headline: formData.headline || undefined,
-          summary: formData.summary || undefined,
-        });
       } else {
         response = await registerEmployer({
           email: formData.email,
@@ -168,7 +155,7 @@ export default function RegisterPage() {
 
             {/* Account type selection */}
             <div className="space-y-3">
-              {(['personal', 'company', 'employer'] as const).map((type) => (
+              {(['personal', 'employer'] as const).map((type) => (
                 <button
                   key={type}
                   onClick={() => {
@@ -253,8 +240,8 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Company fields - for company and employer */}
-            {(accountType === 'company' || accountType === 'employer') && (
+            {/* Company fields - for employer */}
+            {accountType === 'employer' && (
               <>
                 <div>
                   <label className="label">{t('auth.companyName')} *</label>
@@ -301,8 +288,8 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Location - for personal and company */}
-            {(accountType === 'personal' || accountType === 'company') && (
+            {/* Location - for personal */}
+            {accountType === 'personal' && (
               <div>
                 <label className="label">{t('auth.location')}</label>
                 <input
@@ -315,8 +302,8 @@ export default function RegisterPage() {
               </div>
             )}
 
-            {/* Profile fields - for personal and company */}
-            {(accountType === 'personal' || accountType === 'company') && (
+            {/* Profile fields - for personal */}
+            {accountType === 'personal' && (
               <>
                 <div>
                   <label className="label">{t('auth.headline')}</label>

@@ -164,16 +164,12 @@
     "passwordTooShort": "Lösenordet måste vara minst 6 tecken",
     "accountTypes": {
       "personal": {
-        "title": "Personligt konto",
-        "description": "Sök uppdrag som frilansare"
-      },
-      "company": {
-        "title": "Företagskonto",
-        "description": "Sök uppdrag för ditt konsultbolag"
+        "title": "Frilansare",
+        "description": "Jag söker frilansuppdrag"
       },
       "employer": {
         "title": "Uppdragsgivare",
-        "description": "Publicera uppdrag och hitta kandidater"
+        "description": "Jag söker en frilansare"
       }
     }
   },
