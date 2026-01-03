@@ -1,0 +1,16 @@
+<step title="Incoming Request" date="2026-01-03T14:08:02.093" instance="59351f" url="/api/publish?async=true&amp;deployer=GITHUB_ONE_DEPLOY&amp;type=zip&amp;message=%7B%22type%22%3A%22deployment%22%2C%22sha%22%3A%22e09cc838ecfdb21cdd33ab1b1c663669e93b6a28%22%2C%22repoName%22%3A%22netic123%2FGigBoard%22%2C%22actor%22%3A%22netic123%22%2C%22slotName%22%3A%22production%22%2C%22commitMessage%22%3A%22Enable%20auto-deploy%20on%20push%20to%20main%20branch%22%7D" method="POST" type="request" pid="833,1,7" Host="gigboard-api.scm.azurewebsites.net" User-Agent="GITHUBACTIONS_DeployWebAppToAzure_12db98781916f80704f17490fdf01228addec326b1bdfbe254b0dd54a0f5bb38" Authorization="Bea..." Content-Type="application/octet-stream" Cookie="ARRAffinity=59351fa27e3b8ff2edfe6734b7b5bfd768057ef3feaf004e31c03e0b72d93ffe;Path=/;HttpOnly;Secure;Domain=gigboard-api.scm.azurewebsites.net; ARRAffinitySameSite=59351fa27e3b8ff2edfe6734b7b5bfd768057ef3feaf004e31c03e0b72d93ffe;Path=/;HttpOnly;SameSite=None;Secure;Domain=gigboard-api.scm.azurewebsites.net" Transfer-Encoding="chunked" X-ARR-LOG-ID="123befe5-aff8-4652-8756-c26ab30813a9" CLIENT-IP="20.109.36.228:36864" X-SITE-DEPLOYMENT-ID="gigboard-api" WAS-DEFAULT-HOSTNAME="gigboard-api.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/publish?async=true&amp;deployer=GITHUB_ONE_DEPLOY&amp;type=zip&amp;message=%7B%22type%22%3A%22deployment%22%2C%22sha%22%3A%22e09cc838ecfdb21cdd33ab1b1c663669e93b6a28%22%2C%22repoName%22%3A%22netic123%2FGigBoard%22%2C%22actor%22%3A%22netic123%22%2C%22slotName%22%3A%22production%22%2C%22commitMessage%22%3A%22Enable%20auto-deploy%20on%20push%20to%20main%20branch%22%7D" X-Client-IP="20.109.36.228" X-Client-Port="36864" >
+  <step title="OneDeploy" date="2026-01-03T14:08:02.157" >
+    <step title="None repository commit" date="2026-01-03T14:08:02.176" >
+      <step title="Commit id: 932474d0-487d-42eb-b68f-c5a50767738b" date="2026-01-03T14:08:02.183" Message="N/A" AuthorName="N/A" AuthorEmail="N/A" /><!-- duration: 6ms -->
+    </step><!-- duration: 20ms -->
+    <step title="Starting PushDeployAsync" date="2026-01-03T14:08:02.202" /><!-- duration: 6ms -->
+    <step title="WEBSITE_RUN_FROM_PACKAGE is set to 1. Writing zip to SitePackagesPath" date="2026-01-03T14:08:02.222" /><!-- duration: 8ms -->
+    <step title="Copying zip to SitePackages /home/data/SitePackages/20260103140802.zip from request body" date="2026-01-03T14:08:02.241" /><!-- duration: 6ms -->
+    <step title="Writing multipart request body to /home/data/SitePackages/20260103140802.zip" date="2026-01-03T14:08:02.258" /><!-- duration: 14ms -->
+    <step title="Start deployment in the background" date="2026-01-03T14:08:03.010" >
+      <step title="Acquiring Deployment Lock" date="2026-01-03T14:08:03.053" /><!-- duration: 13ms -->
+      <step title="Acquired Deployment Lock" date="2026-01-03T14:08:03.119" /><!-- duration: 15ms -->
+    </step><!-- duration: 233ms -->
+  </step><!-- duration: 1097ms -->
+  <step title="Outgoing response" date="2026-01-03T14:08:03.306" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 7ms -->
+</step><!-- duration: 1226ms -->

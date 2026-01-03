@@ -212,6 +212,13 @@ export async function getMyApplications(): Promise<Application[]> {
   return handleResponse(response);
 }
 
+export async function checkIfApplied(gigId: number): Promise<{ hasApplied: boolean }> {
+  const response = await fetch(`${API_BASE}/applications/check/${gigId}`, {
+    headers: getHeaders(),
+  });
+  return handleResponse(response);
+}
+
 export async function getGigApplications(gigId: number): Promise<Application[]> {
   const response = await fetch(`${API_BASE}/applications/gig/${gigId}`, {
     headers: getHeaders(),
