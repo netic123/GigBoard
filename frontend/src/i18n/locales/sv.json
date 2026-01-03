@@ -1,0 +1,196 @@
+{
+  "app": {
+    "name": "GigBoard",
+    "tagline": "Hitta ditt nästa uppdrag"
+  },
+  "nav": {
+    "gigs": "Uppdrag",
+    "myGigs": "Mina uppdrag",
+    "myApplications": "Mina ansökningar",
+    "login": "Logga in",
+    "logout": "Logga ut"
+  },
+  "language": {
+    "en": "English",
+    "sv": "Svenska"
+  },
+  "home": {
+    "title": "Hitta ditt nästa uppdrag",
+    "subtitle": "Sök bland hundratals konsultuppdrag och frilansuppdrag. Logga in med LinkedIn för att söka direkt.",
+    "searchPlaceholder": "Sök på titel, företag eller kompetens...",
+    "search": "Sök",
+    "gigsCount": "{{count}} uppdrag",
+    "noGigsFound": "Inga uppdrag hittades",
+    "noGigsHint": "Prova att ändra din sökning eller filter",
+    "filters": {
+      "all": "Alla",
+      "itTech": "IT & Tech",
+      "management": "Management & Strategi",
+      "finance": "Ekonomi & Finans",
+      "marketing": "Marknadsföring",
+      "hr": "HR & Rekrytering",
+      "legal": "Juridik",
+      "construction": "Bygg & Teknik",
+      "healthcare": "Vård & Omsorg"
+    }
+  },
+  "gig": {
+    "remote": "Distans",
+    "onsite": "På plats",
+    "types": {
+      "Contract": "Kontrakt",
+      "Freelance": "Frilans",
+      "PartTime": "Deltid",
+      "FullTime": "Heltid"
+    },
+    "perHour": "/h",
+    "skills": "Kompetenser",
+    "about": "Om uppdraget",
+    "interested": "Intresserad?",
+    "applyDescription": "Skicka in din ansökan så kontaktar uppdragsgivaren dig.",
+    "applyNow": "Ansök nu",
+    "applied": "Ansökt",
+    "allGigs": "Alla uppdrag",
+    "postedBy": "Publicerat av",
+    "applications": "ansökningar",
+    "viewApplications": "Visa ansökningar",
+    "edit": "Redigera",
+    "delete": "Ta bort",
+    "confirmDelete": "Är du säker på att du vill ta bort detta uppdrag?"
+  },
+  "apply": {
+    "title": "Ansök till detta uppdrag",
+    "loginRequired": "Logga in för att ansöka",
+    "loginDescription": "Du behöver vara inloggad för att ansöka. Logga in med LinkedIn eller skapa ett konto.",
+    "message": "Meddelande (valfritt)",
+    "messagePlaceholder": "Berätta för uppdragsgivaren varför du passar...",
+    "submit": "Skicka ansökan",
+    "submitting": "Skickar...",
+    "success": "Ansökan skickad!",
+    "successDescription": "Uppdragsgivaren kommer att meddelas och kan kontakta dig."
+  },
+  "myGigs": {
+    "title": "Mina uppdrag",
+    "createNew": "Skapa uppdrag",
+    "noGigs": "Inga uppdrag ännu",
+    "noGigsDescription": "Skapa ditt första uppdrag för att börja hitta kandidater.",
+    "active": "Aktivt",
+    "inactive": "Inaktivt"
+  },
+  "createGig": {
+    "title": "Skapa nytt uppdrag",
+    "editTitle": "Redigera uppdrag",
+    "form": {
+      "title": "Titel",
+      "titlePlaceholder": "t.ex. Senior .NET-utvecklare",
+      "description": "Beskrivning",
+      "descriptionPlaceholder": "Beskriv uppdraget, krav och meriterande...",
+      "company": "Företag",
+      "companyPlaceholder": "Företagsnamn",
+      "location": "Plats",
+      "locationPlaceholder": "t.ex. Stockholm",
+      "remote": "Möjlighet till distansarbete",
+      "type": "Typ",
+      "hourlyRate": "Timpris (kr)",
+      "hourlyRatePlaceholder": "t.ex. 900-1100",
+      "duration": "Längd",
+      "durationPlaceholder": "t.ex. 6 månader",
+      "startDate": "Startdatum",
+      "skills": "Krävda kompetenser",
+      "skillsPlaceholder": "t.ex. .NET, C#, Azure (kommaseparerat)",
+      "competenceArea": "Kompetensområde",
+      "selectCompetenceArea": "Välj område",
+      "submit": "Skapa uppdrag",
+      "update": "Uppdatera uppdrag",
+      "creating": "Skapar...",
+      "updating": "Uppdaterar..."
+    }
+  },
+  "applications": {
+    "title": "Ansökningar för",
+    "noApplications": "Inga ansökningar ännu",
+    "noApplicationsDescription": "När kandidater ansöker kommer de att visas här.",
+    "status": {
+      "Pending": "Väntande",
+      "Reviewed": "Granskad",
+      "Accepted": "Accepterad",
+      "Rejected": "Avvisad"
+    },
+    "markAs": "Markera som",
+    "viewProfile": "Visa profil",
+    "contactVia": "Kontakta via"
+  },
+  "myApplications": {
+    "title": "Mina ansökningar",
+    "noApplications": "Inga ansökningar ännu",
+    "noApplicationsDescription": "När du ansöker till uppdrag kommer de att visas här.",
+    "appliedOn": "Ansökte"
+  },
+  "auth": {
+    "login": "Logga in",
+    "register": "Skapa konto",
+    "loginTitle": "Logga in",
+    "loginSubtitle": "Välkommen tillbaka till GigBoard",
+    "registerTitle": "Skapa konto",
+    "registerSubtitle": "Välj hur du vill använda GigBoard",
+    "continueWithLinkedIn": "Fortsätt med LinkedIn",
+    "orChooseAccountType": "eller välj kontotyp",
+    "email": "E-post",
+    "password": "Lösenord",
+    "confirmPassword": "Bekräfta lösenord",
+    "fullName": "Ditt namn",
+    "phone": "Telefon",
+    "location": "Ort",
+    "locationPlaceholder": "Stockholm",
+    "headline": "Titel/Roll",
+    "headlinePlaceholder": "Senior .NET-utvecklare",
+    "summary": "Om dig/företaget",
+    "summaryPlaceholder": "Berätta kort om dig själv eller företaget...",
+    "skills": "Kompetenser",
+    "skillsPlaceholder": "C#, .NET, Azure, SQL Server (kommaseparerat)",
+    "yearsOfExperience": "År av erfarenhet",
+    "companyName": "Företagsnamn",
+    "organizationNumber": "Organisationsnummer",
+    "orgNumberPlaceholder": "556XXX-XXXX",
+    "website": "Webbplats",
+    "websitePlaceholder": "https://",
+    "createAccount": "Skapa konto",
+    "creatingAccount": "Skapar konto...",
+    "loggingIn": "Loggar in...",
+    "noAccount": "Har du inget konto?",
+    "hasAccount": "Har du redan ett konto?",
+    "back": "Tillbaka",
+    "passwordMismatch": "Lösenorden matchar inte",
+    "passwordTooShort": "Lösenordet måste vara minst 6 tecken",
+    "accountTypes": {
+      "personal": {
+        "title": "Personligt konto",
+        "description": "Sök uppdrag som frilansare"
+      },
+      "company": {
+        "title": "Företagskonto",
+        "description": "Sök uppdrag för ditt konsultbolag"
+      },
+      "employer": {
+        "title": "Uppdragsgivare",
+        "description": "Publicera uppdrag och hitta kandidater"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}}",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "privacy": "Integritetspolicy"
+  },
+  "common": {
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "delete": "Ta bort",
+    "edit": "Redigera",
+    "or": "eller"
+  }
+}
+

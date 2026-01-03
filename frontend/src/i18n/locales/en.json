@@ -1,0 +1,196 @@
+{
+  "app": {
+    "name": "GigBoard",
+    "tagline": "Find your next gig"
+  },
+  "nav": {
+    "gigs": "Gigs",
+    "myGigs": "My Gigs",
+    "myApplications": "My Applications",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "language": {
+    "en": "English",
+    "sv": "Svenska"
+  },
+  "home": {
+    "title": "Find your next gig",
+    "subtitle": "Browse hundreds of consulting and freelance gigs. Log in with LinkedIn to apply directly.",
+    "searchPlaceholder": "Search by title, company or skill...",
+    "search": "Search",
+    "gigsCount": "{{count}} gigs",
+    "noGigsFound": "No gigs found",
+    "noGigsHint": "Try changing your search or filters",
+    "filters": {
+      "all": "All",
+      "itTech": "IT & Tech",
+      "management": "Management & Strategy",
+      "finance": "Finance",
+      "marketing": "Marketing",
+      "hr": "HR & Recruiting",
+      "legal": "Legal",
+      "construction": "Construction & Engineering",
+      "healthcare": "Healthcare"
+    }
+  },
+  "gig": {
+    "remote": "Remote",
+    "onsite": "On-site",
+    "types": {
+      "Contract": "Contract",
+      "Freelance": "Freelance",
+      "PartTime": "Part-time",
+      "FullTime": "Full-time"
+    },
+    "perHour": "/h",
+    "skills": "Skills",
+    "about": "About the gig",
+    "interested": "Interested?",
+    "applyDescription": "Submit your application and the client will contact you.",
+    "applyNow": "Apply now",
+    "applied": "Applied",
+    "allGigs": "All gigs",
+    "postedBy": "Posted by",
+    "applications": "applications",
+    "viewApplications": "View applications",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this gig?"
+  },
+  "apply": {
+    "title": "Apply for this gig",
+    "loginRequired": "Log in to apply",
+    "loginDescription": "You need to be logged in to apply. Log in with LinkedIn or create an account.",
+    "message": "Message (optional)",
+    "messagePlaceholder": "Tell the client why you're a good fit...",
+    "submit": "Submit application",
+    "submitting": "Submitting...",
+    "success": "Application submitted!",
+    "successDescription": "The client will be notified and may contact you."
+  },
+  "myGigs": {
+    "title": "My Gigs",
+    "createNew": "Create gig",
+    "noGigs": "No gigs yet",
+    "noGigsDescription": "Create your first gig to start finding candidates.",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "createGig": {
+    "title": "Create new gig",
+    "editTitle": "Edit gig",
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Senior .NET Developer",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe the assignment, requirements and nice-to-haves...",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "location": "Location",
+      "locationPlaceholder": "e.g. Stockholm",
+      "remote": "Remote work possible",
+      "type": "Type",
+      "hourlyRate": "Hourly rate (SEK)",
+      "hourlyRatePlaceholder": "e.g. 900-1100",
+      "duration": "Duration",
+      "durationPlaceholder": "e.g. 6 months",
+      "startDate": "Start date",
+      "skills": "Required skills",
+      "skillsPlaceholder": "e.g. .NET, C#, Azure (comma separated)",
+      "competenceArea": "Competence area",
+      "selectCompetenceArea": "Select area",
+      "submit": "Create gig",
+      "update": "Update gig",
+      "creating": "Creating...",
+      "updating": "Updating..."
+    }
+  },
+  "applications": {
+    "title": "Applications for",
+    "noApplications": "No applications yet",
+    "noApplicationsDescription": "When candidates apply, they will appear here.",
+    "status": {
+      "Pending": "Pending",
+      "Reviewed": "Reviewed",
+      "Accepted": "Accepted",
+      "Rejected": "Rejected"
+    },
+    "markAs": "Mark as",
+    "viewProfile": "View profile",
+    "contactVia": "Contact via"
+  },
+  "myApplications": {
+    "title": "My Applications",
+    "noApplications": "No applications yet",
+    "noApplicationsDescription": "When you apply for gigs, they will appear here.",
+    "appliedOn": "Applied on"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Create account",
+    "loginTitle": "Log in",
+    "loginSubtitle": "Welcome back to GigBoard",
+    "registerTitle": "Create account",
+    "registerSubtitle": "Choose how you want to use GigBoard",
+    "continueWithLinkedIn": "Continue with LinkedIn",
+    "orChooseAccountType": "or choose account type",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "fullName": "Your name",
+    "phone": "Phone",
+    "location": "City",
+    "locationPlaceholder": "Stockholm",
+    "headline": "Title/Role",
+    "headlinePlaceholder": "Senior .NET Developer",
+    "summary": "About you/company",
+    "summaryPlaceholder": "Tell us briefly about yourself or your company...",
+    "skills": "Skills",
+    "skillsPlaceholder": "C#, .NET, Azure, SQL Server (comma separated)",
+    "yearsOfExperience": "Years of experience",
+    "companyName": "Company name",
+    "organizationNumber": "Organization number",
+    "orgNumberPlaceholder": "556XXX-XXXX",
+    "website": "Website",
+    "websitePlaceholder": "https://",
+    "createAccount": "Create account",
+    "creatingAccount": "Creating account...",
+    "loggingIn": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "back": "Back",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "accountTypes": {
+      "personal": {
+        "title": "Personal account",
+        "description": "Apply for gigs as a freelancer"
+      },
+      "company": {
+        "title": "Company account",
+        "description": "Apply for gigs for your consulting firm"
+      },
+      "employer": {
+        "title": "Employer",
+        "description": "Post gigs and find candidates"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}}",
+    "about": "About us",
+    "contact": "Contact",
+    "privacy": "Privacy policy"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "or": "or"
+  }
+}
+
