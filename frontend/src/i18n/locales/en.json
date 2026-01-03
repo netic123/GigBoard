@@ -229,7 +229,20 @@
     "edit": "Edit",
     "or": "or",
     "optional": "optional",
-    "submitting": "Submitting..."
+    "submitting": "Submitting...",
+    "today": "Today",
+    "daysAgo": "{{count}} days ago",
+    "forSearch": "for \"{{query}}\"",
+    "yourMessage": "Your message:"
+  },
+  "errors": {
+    "loginFailed": "Login failed",
+    "registrationFailed": "Registration failed",
+    "linkedInNotConfigured": "LinkedIn integration is not configured",
+    "linkedInLoginFailed": "LinkedIn login failed",
+    "failedToLoadProfile": "Failed to load profile",
+    "searchGigs": "Browse gigs",
+    "findGigDescription": "Find a gig and submit your first application"
   },
   "reviews": {
     "title": "Reviews",
@@ -259,7 +272,13 @@
     "preferredTypes": "Preferred gig types",
     "availability": "Availability",
     "skills": "Skills",
-    "about": "About me"
+    "about": "About me",
+    "availabilityValues": {
+      "Tillgänglig omgående": "Available immediately",
+      "Tillgänglig från mars 2026": "Available from March 2026",
+      "Kan ta nya uppdrag parallellt": "Can take on parallel assignments",
+      "I uppdrag till juni 2026": "In assignment until June 2026"
+    }
   }
 }
 

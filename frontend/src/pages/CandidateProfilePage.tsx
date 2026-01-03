@@ -7,7 +7,7 @@ import type { CandidateReviewsSummary } from '../types';
 
 export default function CandidateProfilePage() {
   const { id } = useParams<{ id: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [data, setData] = useState<CandidateReviewsSummary | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -19,7 +19,7 @@ export default function CandidateProfilePage() {
         const result = await getCandidateReviews(parseInt(id));
         setData(result);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load profile');
+        setError(err instanceof Error ? err.message : t('errors.failedToLoadProfile'));
       } finally {
         setIsLoading(false);
       }
@@ -225,7 +225,7 @@ export default function CandidateProfilePage() {
                 <div>
                   <p className="text-sm text-neutral-500 mb-2">{t('profile.availability')}</p>
                   <span className="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-sm border border-green-500/20">
-                    {data.availability}
+                    {t(`profile.availabilityValues.${data.availability}`, data.availability)}
                   </span>
                 </div>
               )}
@@ -310,7 +310,7 @@ export default function CandidateProfilePage() {
                     <div className="text-right">
                       {renderStars(review.rating)}
                       <p className="text-xs text-neutral-500 mt-1">
-                        {new Date(review.createdAt).toLocaleDateString('sv-SE')}
+                        {new Date(review.createdAt).toLocaleDateString(i18n.language === 'sv' ? 'sv-SE' : 'en-US')}
                       </p>
                     </div>
                   </div>

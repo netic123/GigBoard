@@ -71,7 +71,7 @@ export default function RegisterPage() {
 
   const handleLinkedInLogin = () => {
     if (!LINKEDIN_CLIENT_ID) {
-      setError('LinkedIn integration is not configured');
+      setError(t('errors.linkedInNotConfigured'));
       return;
     }
     
@@ -162,7 +162,7 @@ export default function RegisterPage() {
         navigate('/');
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Registration failed');
+      setError(err instanceof Error ? err.message : t('errors.registrationFailed'));
     } finally {
       setIsLoading(false);
     }

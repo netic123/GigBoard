@@ -50,7 +50,7 @@ export default function LoginPage() {
             }
           }
         } catch (err) {
-          setError(err instanceof Error ? err.message : 'LinkedIn login failed');
+          setError(err instanceof Error ? err.message : t('errors.linkedInLoginFailed'));
           navigate('/login');
         } finally {
           setIsLoading(false);
@@ -69,7 +69,7 @@ export default function LoginPage() {
 
   const handleLinkedInLogin = () => {
     if (!LINKEDIN_CLIENT_ID) {
-      setError('LinkedIn integration is not configured');
+      setError(t('errors.linkedInNotConfigured'));
       return;
     }
     
@@ -102,7 +102,7 @@ export default function LoginPage() {
         navigate(redirectTo);
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed');
+      setError(err instanceof Error ? err.message : t('errors.loginFailed'));
     } finally {
       setIsLoading(false);
     }

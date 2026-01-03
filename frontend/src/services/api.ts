@@ -15,7 +15,10 @@ import type {
   CanReviewResponse
 } from '../types';
 
-const API_BASE = '/api';
+// Use environment variable for API URL in production, fallback to /api for local development
+const API_BASE = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api` 
+  : '/api';
 
 function getHeaders(): HeadersInit {
   const headers: HeadersInit = {

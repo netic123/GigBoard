@@ -229,7 +229,20 @@
     "edit": "Redigera",
     "or": "eller",
     "optional": "valfritt",
-    "submitting": "Skickar..."
+    "submitting": "Skickar...",
+    "today": "Idag",
+    "daysAgo": "{{count}} dagar sedan",
+    "forSearch": "för \"{{query}}\"",
+    "yourMessage": "Ditt meddelande:"
+  },
+  "errors": {
+    "loginFailed": "Inloggningen misslyckades",
+    "registrationFailed": "Registreringen misslyckades",
+    "linkedInNotConfigured": "LinkedIn-integration är inte konfigurerad",
+    "linkedInLoginFailed": "LinkedIn-inloggning misslyckades",
+    "failedToLoadProfile": "Kunde inte ladda profil",
+    "searchGigs": "Sök uppdrag",
+    "findGigDescription": "Hitta ett uppdrag och skicka in din första ansökan"
   },
   "reviews": {
     "title": "Omdömen",
@@ -259,7 +272,13 @@
     "preferredTypes": "Föredragna uppdragstyper",
     "availability": "Tillgänglighet",
     "skills": "Kompetenser",
-    "about": "Om mig"
+    "about": "Om mig",
+    "availabilityValues": {
+      "Tillgänglig omgående": "Tillgänglig omgående",
+      "Tillgänglig från mars 2026": "Tillgänglig från mars 2026",
+      "Kan ta nya uppdrag parallellt": "Kan ta nya uppdrag parallellt",
+      "I uppdrag till juni 2026": "I uppdrag till juni 2026"
+    }
   }
 }
 

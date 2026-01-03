@@ -138,7 +138,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-semibold">
             {isLoading ? t('common.loading') : t('home.gigsCount', { count: totalCount })}
-            {search && <span className="text-neutral-500 font-normal ml-2">for "{search}"</span>}
+            {search && <span className="text-neutral-500 font-normal ml-2">{t('common.forSearch', { query: search })}</span>}
           </h2>
         </div>
         

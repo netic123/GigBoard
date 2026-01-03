@@ -7,7 +7,7 @@ import type { Gig, Application, CanReviewResponse } from '../types';
 
 export default function GigApplicationsPage() {
   const { id } = useParams<{ id: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [gig, setGig] = useState<Gig | null>(null);
   const [applications, setApplications] = useState<Application[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -87,7 +87,7 @@ export default function GigApplicationsPage() {
       // Update review state
       setReviewStates(prev => ({
         ...prev,
-        [applicantId]: { canReview: false, hasAlreadyReviewed: true, message: null }
+        [applicantId]: { canReview: false, hasAlreadyReviewed: true, message: undefined }
       }));
       
       setShowReviewModal(null);
@@ -250,7 +250,7 @@ export default function GigApplicationsPage() {
                     </select>
                     
                     <span className="text-xs text-neutral-500">
-                      {new Date(app.appliedAt).toLocaleDateString('sv-SE')}
+                      {new Date(app.appliedAt).toLocaleDateString(i18n.language === 'sv' ? 'sv-SE' : 'en-US')}
                     </span>
                     
                     {/* Review button - only for accepted applications */}

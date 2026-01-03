@@ -7,7 +7,7 @@ import { getGig, applyToGig } from '../services/api';
 import type { Gig } from '../types';
 
 export default function GigDetailPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -182,7 +182,7 @@ export default function GigDetailPage() {
               <div>
                 <p className="text-sm text-neutral-500 mb-1">{t('gig.startDate')}</p>
                 <p className="text-lg font-semibold text-white">
-                  {new Date(gig.startDate).toLocaleDateString('sv-SE', { 
+                  {new Date(gig.startDate).toLocaleDateString(i18n.language === 'sv' ? 'sv-SE' : 'en-US', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
@@ -219,7 +219,7 @@ export default function GigDetailPage() {
                 <div>
                   <p className="text-sm text-neutral-500 mb-1">{t('gig.applyBefore')}</p>
                   <p className="text-lg font-semibold text-yellow-400">
-                    {new Date(gig.expiresAt).toLocaleDateString('sv-SE', { 
+                    {new Date(gig.expiresAt).toLocaleDateString(i18n.language === 'sv' ? 'sv-SE' : 'en-US', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 

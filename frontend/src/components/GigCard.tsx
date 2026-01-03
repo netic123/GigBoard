@@ -7,7 +7,7 @@ interface GigCardProps {
 }
 
 export default function GigCard({ gig }: GigCardProps) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   const daysAgo = Math.floor(
     (Date.now() - new Date(gig.createdAt).getTime()) / (1000 * 60 * 60 * 24)
@@ -15,12 +15,9 @@ export default function GigCard({ gig }: GigCardProps) {
 
   const getDaysAgoText = () => {
     if (daysAgo === 0) {
-      return i18n.language === 'sv' ? 'Idag' : 'Today';
+      return t('common.today');
     }
-    if (i18n.language === 'sv') {
-      return `${daysAgo} dagar sedan`;
-    }
-    return `${daysAgo} days ago`;
+    return t('common.daysAgo', { count: daysAgo });
   };
 
   return (

@@ -8,23 +8,13 @@ using GigBoard.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Database - SQL Server for production, SQLite for development
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var useSqlServer = builder.Configuration.GetValue<bool>("UseSqlServer");
+// Database - SQL Server
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    if (useSqlServer && !string.IsNullOrEmpty(connectionString))
-    {
-        options.UseSqlServer(connectionString);
-    }
-    else
-    {
-        // Use absolute path to ensure database persists across rebuilds
-        var dbPath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "GigBoard.db");
-        dbPath = Path.GetFullPath(dbPath); // Normalize the path
-        options.UseSqlite($"Data Source={dbPath}");
-    }
+    options.UseSqlServer(connectionString);
 });
 
 // Services
@@ -56,9 +46,38 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins(
-                builder.Configuration.GetSection("Cors:Origins").Get<string[]>() ?? new[] { "http://localhost:5173" })
-            .AllowAnyHeader()
+        var origins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>() 
+            ?? new[] { "http://localhost:5173" };
+        
+        // Filter out wildcard patterns for SetIsOriginAllowed
+        var wildcardOrigins = origins.Where(o => o.Contains("*")).ToList();
+        var exactOrigins = origins.Where(o => !o.Contains("*")).ToArray();
+        
+        if (exactOrigins.Length > 0)
+        {
+            policy.WithOrigins(exactOrigins);
+        }
+        
+        // Handle wildcard origins (e.g., *.azurestaticapps.net)
+        if (wildcardOrigins.Count > 0)
+        {
+            policy.SetIsOriginAllowed(origin =>
+            {
+                foreach (var pattern in wildcardOrigins)
+                {
+                    var regexPattern = "^" + System.Text.RegularExpressions.Regex.Escape(pattern)
+                        .Replace("\\*", ".*") + "$";
+                    if (System.Text.RegularExpressions.Regex.IsMatch(origin, regexPattern, 
+                        System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+                return exactOrigins.Contains(origin);
+            });
+        }
+        
+        policy.AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
     });

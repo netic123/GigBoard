@@ -146,7 +146,7 @@ export default function LeaderboardPage() {
                       )}
                       {candidate.candidateType === 'Freelance' && (
                         <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                          Freelance
+                          {t('profile.freelancer')}
                         </span>
                       )}
                       {candidate.isActivelyLooking ? (
