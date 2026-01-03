@@ -8,12 +8,12 @@ En enkel och minimalistisk plattform för att hitta och publicera konsultuppdrag
 - Bläddra bland uppdrag utan att logga in
 - Sök och filtrera på kompetensområde
 - Visa uppdragsdetaljer
-- Ansök med LinkedIn-inloggning (din profil skickas till uppdragsgivaren)
+- Skapa konto och ansök till uppdrag
 
 ### För uppdragsgivare
 - Registrera konto med email/lösenord
 - Skapa och hantera uppdrag
-- Se alla ansökningar med LinkedIn-profilinformation
+- Se alla ansökningar med kandidatinformation
 - Få mailnotifikation när någon ansöker
 
 ## Tech Stack
@@ -22,7 +22,6 @@ En enkel och minimalistisk plattform för att hitta och publicera konsultuppdrag
 - .NET 8 Web API
 - Entity Framework Core med SQL Server
 - JWT-baserad autentisering
-- LinkedIn OAuth 2.0
 - MailKit för email-notifikationer
 
 ### Frontend
@@ -89,12 +88,6 @@ Om du inte vill använda Docker:
 ```
 
 ## Konfiguration
-
-### LinkedIn OAuth
-
-1. Skapa en app på https://www.linkedin.com/developers/
-2. Lägg till redirect URI: `http://localhost:5173/login/callback`
-3. Uppdatera `appsettings.json` med ClientId och ClientSecret
 
 ### Email (SMTP)
 
