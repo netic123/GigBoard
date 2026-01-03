@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
-import { registerPersonal, registerEmployer, registerWithLinkedIn } from '../services/api';
+import { registerPersonal, registerEmployer, registerWithLinkedIn, uploadImage } from '../services/api';
 import type { LinkedInProfileData } from '../types';
 
 type AccountType = 'personal' | 'employer';
@@ -48,6 +48,9 @@ export default function RegisterPage() {
   
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [profilePicture, setProfilePicture] = useState<File | null>(null);
+  const [profilePicturePreview, setProfilePicturePreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
   // Load LinkedIn data from session storage
   useEffect(() => {
@@ -68,6 +71,22 @@ export default function RegisterPage() {
       }
     }
   }, [isLinkedInFlow, navigate]);
+
+  const handleProfilePictureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        setError(t('auth.profilePictureTooLarge'));
+        return;
+      }
+      setProfilePicture(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfilePicturePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleLinkedInLogin = () => {
     if (!LINKEDIN_CLIENT_ID) {
@@ -108,8 +127,15 @@ export default function RegisterPage() {
 
     setIsLoading(true);
     try {
+      // Upload profile picture if selected
+      let profilePictureUrl: string | undefined;
+      if (profilePicture) {
+        const uploadResult = await uploadImage(profilePicture);
+        profilePictureUrl = uploadResult.url;
+      }
+
       let response;
-      
+
       if (linkedInData) {
         // LinkedIn registration - no password
         response = await registerWithLinkedIn({
@@ -117,7 +143,7 @@ export default function RegisterPage() {
           email: formData.email,
           fullName: formData.fullName,
           linkedInProfileUrl: linkedInData.profileUrl,
-          profilePictureUrl: linkedInData.profilePictureUrl,
+          profilePictureUrl: profilePictureUrl || linkedInData.profilePictureUrl,
           phone: formData.phone || undefined,
           location: formData.location || undefined,
           headline: formData.headline || undefined,
@@ -127,7 +153,7 @@ export default function RegisterPage() {
           companyName: candidateType === 'ConsultingFirm' ? formData.companyName : undefined,
           candidateType: candidateType,
         });
-        
+
         // Clear LinkedIn data from session storage
         sessionStorage.removeItem('linkedInData');
       } else if (accountType === 'personal') {
@@ -141,6 +167,7 @@ export default function RegisterPage() {
           summary: formData.summary || undefined,
           skills: formData.skills ? formData.skills.split(',').map(s => s.trim()) : undefined,
           yearsOfExperience: formData.yearsOfExperience ? parseInt(formData.yearsOfExperience) : undefined,
+          profilePictureUrl: profilePictureUrl,
         });
       } else {
         response = await registerEmployer({
@@ -151,6 +178,7 @@ export default function RegisterPage() {
           organizationNumber: formData.organizationNumber || undefined,
           companyWebsite: formData.companyWebsite || undefined,
           phone: formData.phone || undefined,
+          profilePictureUrl: profilePictureUrl,
         });
       }
       
@@ -273,6 +301,46 @@ export default function RegisterPage() {
                 <div className="text-sm text-neutral-400">{t(`auth.accountTypes.${accountType}.description`)}</div>
               </div>
             )}
+
+            {/* Profile Picture Upload */}
+            <div className="mb-6">
+              <label className="label">{t('auth.profilePicture')}</label>
+              <div className="flex items-center gap-4">
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-20 h-20 rounded-full bg-neutral-800 border-2 border-dashed border-neutral-600 hover:border-neutral-400 flex items-center justify-center cursor-pointer overflow-hidden transition-colors"
+                >
+                  {profilePicturePreview || (linkedInData?.profilePictureUrl && !profilePicture) ? (
+                    <img
+                      src={profilePicturePreview || linkedInData?.profilePictureUrl}
+                      alt="Profile"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <svg className="w-8 h-8 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
+                    </svg>
+                  )}
+                </div>
+                <div className="flex-1">
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="text-sm text-white hover:text-neutral-300 underline"
+                  >
+                    {profilePicturePreview || linkedInData?.profilePictureUrl ? t('auth.changePhoto') : t('auth.uploadPhoto')}
+                  </button>
+                  <p className="text-xs text-neutral-500 mt-1">{t('auth.profilePictureHint')}</p>
+                </div>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/jpeg,image/png,image/gif,image/webp"
+                  onChange={handleProfilePictureChange}
+                  className="hidden"
+                />
+              </div>
+            </div>
 
             {/* Candidate type selection - for LinkedIn flow */}
             {linkedInData && (

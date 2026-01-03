@@ -70,7 +70,8 @@ public record RegisterPersonalRequest(
     string? Headline,
     string? Summary,
     List<string>? Skills,
-    int? YearsOfExperience
+    int? YearsOfExperience,
+    string? ProfilePictureUrl
 );
 
 // Registration - Company account (consulting firm)
@@ -95,7 +96,8 @@ public record RegisterEmployerRequest(
     string CompanyName,
     string? OrganizationNumber,
     string? CompanyWebsite,
-    string? Phone
+    string? Phone,
+    string? ProfilePictureUrl
 );
 
 // Login

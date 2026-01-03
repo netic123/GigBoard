@@ -89,6 +89,12 @@
     "active": "Active",
     "inactive": "Inactive"
   },
+  "editGig": {
+    "title": "Edit gig",
+    "save": "Save changes",
+    "saving": "Saving...",
+    "active": "Gig is active and visible to candidates"
+  },
   "createGig": {
     "title": "Create new gig",
     "editTitle": "Edit gig",
@@ -200,7 +206,12 @@
     },
     "linkedInConnected": "Connected to LinkedIn",
     "consultingCompany": "Which consulting company?",
-    "emailFromLinkedIn": "Email from your LinkedIn account"
+    "emailFromLinkedIn": "Email from your LinkedIn account",
+    "profilePicture": "Profile picture",
+    "uploadPhoto": "Upload photo",
+    "changePhoto": "Change photo",
+    "profilePictureHint": "JPG, PNG or GIF. Max 5MB.",
+    "profilePictureTooLarge": "Image is too large. Max 5MB."
   },
   "leaderboard": {
     "title": "Leaderboard",
