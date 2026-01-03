@@ -81,7 +81,7 @@ public class AppDbContext : DbContext
             entity.HasOne(r => r.Candidate)
                 .WithMany(u => u.ReceivedReviews)
                 .HasForeignKey(r => r.CandidateId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
                 
             entity.HasOne(r => r.Gig)
                 .WithMany(g => g.Reviews)
