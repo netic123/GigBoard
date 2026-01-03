@@ -91,3 +91,4 @@ coverage/
 
 # Nested repo folder
 GigBoard/
+.claude/
