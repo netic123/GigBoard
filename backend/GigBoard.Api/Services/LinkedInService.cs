@@ -29,16 +29,23 @@ public class LinkedInService : ILinkedInService
     {
         var clientId = _config["LinkedIn:ClientId"];
         var clientSecret = _config["LinkedIn:ClientSecret"];
-        
+
+        if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) ||
+            clientId.StartsWith("YOUR_") || clientSecret.StartsWith("YOUR_"))
+        {
+            _logger.LogError("LinkedIn credentials not configured. ClientId: {ClientId}", clientId ?? "null");
+            return null;
+        }
+
         var content = new FormUrlEncodedContent(new[]
         {
             new KeyValuePair<string, string>("grant_type", "authorization_code"),
             new KeyValuePair<string, string>("code", code),
             new KeyValuePair<string, string>("redirect_uri", redirectUri),
-            new KeyValuePair<string, string>("client_id", clientId!),
-            new KeyValuePair<string, string>("client_secret", clientSecret!)
+            new KeyValuePair<string, string>("client_id", clientId),
+            new KeyValuePair<string, string>("client_secret", clientSecret)
         });
-        
+
         try
         {
             var response = await _httpClient.PostAsync("https://www.linkedin.com/oauth/v2/accessToken", content);
