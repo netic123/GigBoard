@@ -1,10 +1,12 @@
 name: Deploy Backend to Azure
 
 on:
-  # Disabled auto-deploy until Azure secrets are configured
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-deploy.yml'
   workflow_dispatch:
 
 env:
