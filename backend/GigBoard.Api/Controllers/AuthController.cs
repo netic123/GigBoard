@@ -32,8 +32,19 @@ public class AuthController : ControllerBase
         if (tokenResponse == null)
             return BadRequest(new { error = "Failed to authenticate with LinkedIn" });
         
-        // Get user info
-        var userInfo = await _linkedIn.GetUserInfo(tokenResponse.access_token);
+        // Get user info - prefer id_token (OpenID Connect), fallback to API call
+        LinkedInUserInfo? userInfo = null;
+        
+        if (!string.IsNullOrEmpty(tokenResponse.id_token))
+        {
+            userInfo = _linkedIn.GetUserInfoFromIdToken(tokenResponse.id_token);
+        }
+        
+        if (userInfo == null)
+        {
+            userInfo = await _linkedIn.GetUserInfo(tokenResponse.access_token);
+        }
+        
         if (userInfo == null)
             return BadRequest(new { error = "Failed to get user info from LinkedIn" });
         
