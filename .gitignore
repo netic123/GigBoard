@@ -88,3 +88,6 @@ TestResults/
 coverage/
 *.coverage
 *.coveragexml
+
+# Nested repo folder
+GigBoard/
