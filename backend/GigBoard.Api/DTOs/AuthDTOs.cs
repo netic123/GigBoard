@@ -10,7 +10,8 @@ public record LinkedInTokenResponse(
     int expires_in,
     string? refresh_token,
     int? refresh_token_expires_in,
-    string scope
+    string scope,
+    string? id_token
 );
 
 public record LinkedInUserInfo(

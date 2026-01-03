@@ -1,5 +1,6 @@
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.IdentityModel.Tokens.Jwt;
 using GigBoard.Api.DTOs;
 
 namespace GigBoard.Api.Services;
@@ -8,6 +9,7 @@ public interface ILinkedInService
 {
     Task<LinkedInTokenResponse?> ExchangeCodeForToken(string code, string redirectUri);
     Task<LinkedInUserInfo?> GetUserInfo(string accessToken);
+    LinkedInUserInfo? GetUserInfoFromIdToken(string idToken);
 }
 
 public class LinkedInService : ILinkedInService
@@ -77,6 +79,30 @@ public class LinkedInService : ILinkedInService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error getting LinkedIn user info");
+            return null;
+        }
+    }
+    
+    public LinkedInUserInfo? GetUserInfoFromIdToken(string idToken)
+    {
+        try
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var token = handler.ReadJwtToken(idToken);
+            
+            var sub = token.Claims.FirstOrDefault(c => c.Type == "sub")?.Value ?? "";
+            var name = token.Claims.FirstOrDefault(c => c.Type == "name")?.Value ?? "";
+            var givenName = token.Claims.FirstOrDefault(c => c.Type == "given_name")?.Value;
+            var familyName = token.Claims.FirstOrDefault(c => c.Type == "family_name")?.Value;
+            var picture = token.Claims.FirstOrDefault(c => c.Type == "picture")?.Value;
+            var email = token.Claims.FirstOrDefault(c => c.Type == "email")?.Value ?? "";
+            var emailVerified = bool.TryParse(token.Claims.FirstOrDefault(c => c.Type == "email_verified")?.Value, out var ev) && ev;
+            
+            return new LinkedInUserInfo(sub, name, givenName, familyName, picture, email, emailVerified);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error decoding LinkedIn id_token");
             return null;
         }
     }
