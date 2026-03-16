@@ -9,12 +9,35 @@ En enkel och minimalistisk plattform för att hitta och publicera konsultuppdrag
 - Sök och filtrera på kompetensområde
 - Visa uppdragsdetaljer
 - Skapa konto och ansök till uppdrag
+- Kandidatprofil med profilbild, kompetenser och LinkedIn-länk
+- Se sina egna ansökningar och status
+- Ladda upp profilbild (JPG, PNG, GIF, WEBP, max 5 MB)
 
 ### För uppdragsgivare
 - Registrera konto med email/lösenord
 - Skapa och hantera uppdrag
 - Se alla ansökningar med kandidatinformation
 - Få mailnotifikation när någon ansöker
+- Lämna omdömen (reviews) på kandidater efter avslutat uppdrag
+
+### Omdömessystem (reviews)
+- Uppdragsgivare kan betygsätta kandidater med 1-5 stjärnor och fritext
+- Kandidatprofiler visar snittbetyg och alla omdömen
+- Omdömen är publikt synliga
+
+### Leaderboard
+- Topplista över kandidater baserat på genomförda uppdrag och betyg
+- Visar snittbetyg, antal omdömen och kompetenser
+- Filtrera på frilansare eller konsultbolag
+
+### LinkedIn-integration
+- Kandidater kan länka sin LinkedIn-profil
+- LinkedIn-URL visas i ansökningar och på kandidatprofilen
+- Uppdragsgivare kan gå direkt till kandidatens LinkedIn från ansökningsvyn
+
+### Flerspråksstöd (i18n)
+- Svenska och engelska
+- Språkval sparas i webbläsaren
 
 ## Tech Stack
 
@@ -29,6 +52,7 @@ En enkel och minimalistisk plattform för att hitta och publicera konsultuppdrag
 - Vite som bundler
 - Tailwind CSS 4
 - React Router
+- react-i18next för flerspråksstöd
 
 ### Azure (Produktion)
 - Azure App Service (Free F1)
@@ -82,7 +106,7 @@ Om du inte vill använda Docker:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=GigBoard;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=(localdb)\mssqllocaldb;Database=GigBoard;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }
 ```
@@ -152,6 +176,7 @@ GigBoard/
 │   └── src/
 │       ├── components/         # React komponenter
 │       ├── context/            # React context (auth)
+│       ├── i18n/               # Översättningar (sv/en)
 │       ├── pages/              # Sidor/routes
 │       ├── services/           # API-anrop
 │       └── types/              # TypeScript typer
